@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+import logoWofy from '../assets/logo-wofy.png';
+---
+
+<header class="flex justify-between items-center py-3 w-full h-28 mx-20">
+	
+  <Image src={logoWofy} alt="wofy" class="h-auto w-32" loading="eager"/>
+	
+	<nav class="flex flex-row items-center gap-x-10 text-wofy-black opacity-95 font-light">
+		<a href="/services">Servicios</a>
+		<a href="/contact">Nosotros</a>
+    <a href="/demo" class="bg-puerto-rico-500 text-wofy-white font-medium px-8 py-4 rounded-md hover:bg-puerto-rico-600 active:bg-puerto-rico-700">Inicia ahora</a>
+	</nav>
+</header>
