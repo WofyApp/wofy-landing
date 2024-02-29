@@ -3,23 +3,23 @@ import { Image } from 'astro:assets';
 import logoWofy from '../assets/logo-wofy.png';
 ---
 
-<header
-	class="flex justify-between items-center py-3 max-w-full h-28 px-10"
->
+<header class="sticky top-0 z-50 bg-white shadow-sm flex justify-between items-center py-6 max-w-full h-20 px-10 md:px-20 lg:px-40">
 	<div class="flex-1 md:flex md:items-center md:gap-12 min-w-max">
-		<Image src={logoWofy} alt="wofy" class="h-auto w-32" loading="eager" />
+		<a href="/">
+			<Image src={logoWofy} alt="wofy" class="h-auto w-32" loading="eager"/>
+		</a>
 	</div>
 	<div class="md:flex md:items-center md:gap-10 min-w-max">
 		<nav
-			class="hidden md:flex items-center gap-x-10 text-wofy-black opacity-95 font-light"
+			class="hidden md:flex items-center gap-x-10 text-wofy-black opacity-95 font-light active:text-puerto-rico-800"
 		>
-			<a href="/services">Servicios</a>
-			<a href="/contact">Nosotros</a>
+			<a class="hover:text-puerto-rico-700" href="#servicios">Servicios</a>
+			<a class="hover:text-puerto-rico-700" href="#nosotros">Nosotros</a>
 		</nav>
 		<div class="flex items-center gap-4">
 			<a
-				href="/demo"
-				class="hidden sm:flex bg-puerto-rico-500 text-wofy-white font-medium sm:px-6 sm:py-4 rounded-md hover:bg-puerto-rico-600 active:bg-puerto-rico-700"
+				href="#contacto"
+				class="hidden sm:flex bg-puerto-rico-500 text-wofy-white font-medium sm:px-6 sm:py-4 rounded-md hover:bg-puerto-rico-600 active:bg-puerto-rico-700 transition duration-300 ease-in-out"
 				>Inicia ahora</a
 			>
 			<div class="block md:hidden">

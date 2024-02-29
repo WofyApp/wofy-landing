@@ -1,37 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import heroWofy from '../assets/hero-image-bg.png';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Wofy | Tecnología para nuestras mascotas al alcance de todos.">
 	<main>
-		<section class="px-8 sm:px-20 hero">
-			<div
-				class="flex flex-col items-center justify-center lg:gap-20 lg:flex-row xl:gap-36"
-			>
-				<div class="text-center lg:text-left flex-col max-w-96">
-					<h1 class="text-4xl text-wofy-black font-bold">
-						Transforma tu <span class="text-puerto-rico-400"
-							>clínica</span
-						> veterinaria con la tecnología más intuitiva
-					</h1>
-					<p class="text-lg mt-4">
-						Unete a una era de soluciones innovadoras para tu
-						negocio que ademas te hagan la vida mucho más facil.
-					</p>
-				</div>
-				<div
-					class="flex flex-col min-w-[200px] max-w-[500px] items-center justify-center mt-8 sm:mt-0"
-				>
-					<Image
-						src={heroWofy}
-						alt="Connect with your clients"
-						class=""
-						loading="eager"
-					/>
-				</div>
-			</div>
-		</section>
+		<Hero />
+		<Services />
 	</main>
 </Layout>

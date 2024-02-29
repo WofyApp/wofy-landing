@@ -1,0 +1,7 @@
+---
+const { class: className } = Astro.props;
+---
+
+<article class={`flex flex-col items-center justify-center bg-puerto-rico-400/10 rounded-lg w-64 h-96 shadow-md sm:w-80 sm:h-[500px] md:w-[530px] md:h-[608px] ${className}`}>
+    <slot />
+</article>

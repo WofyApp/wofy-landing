@@ -1,0 +1,74 @@
+---
+import ServiceCard from '../components/ServiceCard.astro';
+import { Image } from 'astro:assets';
+import imageVet from '../assets/service-vet.png';
+import imageChart from '../assets/service-chart.png';
+import imageDashboard from '../assets/service-dashboard-light.png';
+---
+
+<section id='servicios' class="px-8 sm:px-20 mt-20 lg:mt-40">
+	<div class="flex flex-col">
+		<h2 class="text-center text-3xl lg:text-4xl font-bold mb-4">
+			Lleva tu negocio al <span class="text-puerto-rico-600"
+				>siguiente nivel</span
+			>
+		</h2>
+		<p class="text-lg lg:text-2xl text-center xl:px-32 2xl:px-48">
+			El futuro de la tecnología es ahora. No te quedes atrás. Utiliza
+			datos que te permitan tomar decisiones informadas y eficientes.
+			Conoce a tus clientes y ofreceles una experiencia única y veloz.
+		</p>
+	</div>
+
+	<div class="mt-5 flex lg:hidden p-2 md:p-12 overflow-auto lg:w-full lg:flex-wrap no-scrollbar">
+		<div class="flex flex-row gap-2">
+			<ServiceCard class='px-8 py-5 mr-4 lg:w-[800px]'>
+				<Image class="w-[280px] md:w-[450px] lg:w-[600px]" src={imageVet} alt="Veterinaria" />
+				<div class="text-left mt-10">
+					<h1 class="text-2xl font-bold">Eficiencia en la <span class="text-puerto-rico-800/70">gestión de citas</span></h1>
+					<p class='mt-2'>Automatiza tus procesos haciendo que sea más fácil manejar tus horarios y optimizar tu tiempo.</p>
+				</div>
+			</ServiceCard>
+			<ServiceCard class='px-8 py-5 mr-4'>
+				<Image class="w-[280px] md:w-[380px] lg:w-[600px]" src={imageDashboard} alt="Veterinaria" />
+				<div class="text-left mt-10">
+					<h1 class="text-2xl font-bold">Crece. Acelera. Evoluciona.</h1>
+					<p class='mt-2'>Es el momento de crecer tu negocio mediante analítica en tiempo real y exacta.</p>
+				</div>
+			</ServiceCard>
+			<ServiceCard class='px-8 py-5'>
+				<Image class='w-[180px] md:w-[380px] lg:w-[500px]' src={imageChart} alt="Veterinaria" />
+				<div class="text-left mt-10">
+					<h1 class="text-2xl font-bold">Atencion al cliente mejorada</h1>
+					<p class='mt-2'>Incrementa la satisfacción de tus clientes y evita demoras en su atención.</p>
+			</div>
+			</ServiceCard>
+		</div>
+	</div>
+
+	<div class="hidden mt-5 lg:flex p-12 max-w-full 2xl:px-36">
+		<div class="flex flex-row flex-wrap max-w-full gap-y-4 gap-x-2">
+			<ServiceCard class='lg:flex-row lg:gap-x-10  px-8 xl:px-12 py-5 mr-4 lg:h-[550px] lg:w-[920px] xl:w-[1200px] flex-grow'>
+				<Image class="w-[280px] md:w-[450px] lg:w-[400px] xl:w-[600px]" src={imageVet} alt="Veterinaria" />
+				<div class="text-left mt-10">
+					<h1 class="text-4xl font-bold">Eficiencia en la <span class="text-puerto-rico-800/70">gestión de citas</span></h1>
+					<p class='text-xl mt-2'>Automatiza tus procesos haciendo que sea más fácil manejar tus horarios y optimizar tu tiempo.</p>
+				</div>
+			</ServiceCard>
+			<ServiceCard class='px-8 py-5 mr-4 flex-1'>
+				<Image class="w-[280px] md:w-[380px] lg:w-[500px]" src={imageDashboard} alt="Veterinaria" />
+				<div class="text-left mt-10">
+					<h1 class="text-4xl font-bold">Crece. <span class='text-puerto-rico-700'>Acelera.</span> Evoluciona.</h1>
+					<p class='text-xl mt-2'>Es el momento de crecer tu negocio mediante analítica en tiempo real y exacta.</p>
+			</div>
+			</ServiceCard>
+			<ServiceCard class='px-8 py-5 mr-4 lg:max-w-[430px]'>
+				<Image class='w-[180px] md:w-[380px] lg:w-[500px]' src={imageChart} alt="Veterinaria" />
+				<div class="text-left mt-10">
+					<h1 class="text-4xl font-bold">Atencion al cliente mejorada</h1>
+					<p class='text-xl mt-2'>Incrementa la satisfacción de tus clientes y evita demoras en su atención.</p>
+			</div>
+			</ServiceCard>
+		</div>
+	</div>
+</section>
