@@ -3,28 +3,37 @@ import { Image } from 'astro:assets';
 import logoWofy from '../assets/logo-wofy.png';
 ---
 
-<header class="sticky top-0 z-50 bg-white shadow-sm flex justify-between items-center py-6 max-w-full h-20 px-10 md:px-20 lg:px-40">
-	<div class="flex-1 md:flex md:items-center md:gap-12 min-w-max">
+<header
+	class="sticky top-0 z-50 bg-white shadow-sm flex justify-between items-center py-6 max-w-full h-20 px-10 md:px-20 lg:px-40"
+>
+	<div class="md:flex md:items-center md:gap-12 min-w-max">
 		<a href="/">
-			<Image src={logoWofy} alt="wofy" class="h-auto w-32" loading="eager"/>
+			<Image
+				src={logoWofy}
+				alt="wofy"
+				class="h-auto w-32"
+				loading="eager"
+			/>
 		</a>
 	</div>
 	<div class="md:flex md:items-center md:gap-10 min-w-max">
 		<nav
 			class="hidden md:flex items-center gap-x-10 text-wofy-black opacity-95 font-light active:text-puerto-rico-800"
 		>
-			<a class="hover:text-puerto-rico-700" href="#servicios">Servicios</a>
+			<a class="hover:text-puerto-rico-700" href="#servicios">Servicios</a
+			>
 			<a class="hover:text-puerto-rico-700" href="#nosotros">Nosotros</a>
 		</nav>
 		<div class="flex items-center gap-4">
 			<a
 				href="#contacto"
-				class="hidden sm:flex bg-puerto-rico-500 text-wofy-white font-medium sm:px-6 sm:py-4 rounded-md hover:bg-puerto-rico-600 active:bg-puerto-rico-700 transition duration-300 ease-in-out"
+				class="hidden md:flex bg-puerto-rico-500 text-wofy-white font-medium sm:px-6 sm:py-4 rounded-md hover:bg-puerto-rico-600 active:bg-puerto-rico-700 transition duration-300 ease-in-out"
 				>Inicia ahora</a
 			>
 			<div class="block md:hidden">
-				<button
-					class="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
+				<input type="checkbox" id="mobile-menu-toggle" class="hidden" />
+				<label
+					for='mobile-menu-toggle' class="mobile-menu-toggle-button rounded bg-gray-800 text-gray-600 transition hover:text-gray-600/75 cursor-pointer"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -39,8 +48,42 @@ import logoWofy from '../assets/logo-wofy.png';
 							stroke-linejoin="round"
 							d="M4 6h16M4 12h16M4 18h16"></path>
 					</svg>
-				</button>
+				</label>
+				<nav id="mobile-menu w-32" class="mobile-menu md:hidden absolute top-20 left-0 bg-white w-full py-4 px-8 border-t border-b">
+					<a class="hover:text-puerto-rico-700 border-b py-4 border-slate-100" href="#servicios"
+						>Servicios</a
+					>
+					<a class="hover:text-puerto-rico-700 border-b py-4 border-slate-100" href="#nosotros"
+						>Nosotros</a
+					>
+					<a
+						href="#contacto"
+						class="flex justify-center px-6 py-4 mt-10 bg-puerto-rico-500 border-b text-wofy-white font-bold sm:px-6 sm:py-4 rounded-md hover:bg-puerto-rico-600 active:bg-puerto-rico-700 transition duration-300 ease-in-out"
+						>Inicia ahora</a
+					>
+				</nav>
 			</div>
 		</div>
 	</div>
 </header>
+
+<style>
+	.mobile-menu {
+		display: none;
+		height: 0;
+		max-height: 0;
+    overflow: hidden;
+		opacity: 0;
+    transition: display 0.3s ease-in-out;
+	}
+
+	/* Show the mobile menu when the checkbox is checked */
+	#mobile-menu-toggle:checked + label + nav {
+		display: flex;
+		flex-direction: column;
+		height: auto;
+		max-height: 500px;
+		opacity: 1;
+		transition: display 0.3s ease-in-out;
+	}
+</style>
