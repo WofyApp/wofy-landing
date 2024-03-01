@@ -1,0 +1,41 @@
+---
+import WhatsappIcon from '../components/Whatsapp.astro'
+import Desktop from "../components/Desktop.astro"
+---
+
+<section id='nosotros' class="px-8 sm:px-20 mt-20 lg:mt-40">
+  <header>
+    <h2 class="text-center text-3xl lg:text-4xl font-bold mb-4 text-puerto-rico-600">
+			<span class='text-black'>¿Que esperas</span> para conectar con <span class='text-black'>tus clientes </span>como nunca antes?
+		</h2>
+    <p class="text-md lg:text-xl text-center xl:px-32 2xl:px-48">
+      Con nuestra plataforma de servicios de agendamiento automatizados, podrás sacar valor a tu tiempo y al de tus clientes, además de tener toda la información de tus clientes en un solo lugar.
+    </p>
+  </header>
+
+  <div class="flex flex-col lg:flex-row justify-center items-center mt-10 gap-8">
+    <div class="bg-puerto-rico-700 border border-puerto-rico-600 max-w-96 w-80 h-96 shadow-md rounded-2xl relative overflow-hidden">
+      <h3 class="text-white sticky z-10 px-10 py-8 text-center font-semibold">Agendamiento automatizado</h3>
+      <div class="absolute top-1/3 -left-32 -translate-y-1/2 rounded-full size-80 blur-3xl bg-puerto-rico-500"></div>
+      <div class="absolute -top-56 left-1/2 -translate-x-1/2 rounded-full size-96 blur-3xl bg-puerto-rico-500"></div>
+      <p class="text-white sticky z-10 px-10 text-center">Mediante el uso de Whatsapp podrás recibir citas de tus clientes en instantes y de forma centralizada</p>
+      <WhatsappIcon class="absolute bottom-10 left-[110px]"/>
+    </div>
+    <div class="bg-puerto-rico-700 border border-puerto-rico-600 max-w-96 w-80 h-96 shadow-md rounded-2xl relative overflow-hidden">
+      <h3 class="text-white sticky z-10 px-10 py-8 text-center font-semibold">Portal web avanzado</h3>
+      <div class="absolute top-1/3 -left-32 -translate-y-1/2 rounded-full size-80 blur-3xl bg-puerto-rico-500"></div>
+      <div class="absolute -top-56 left-1/2 -translate-x-1/2 rounded-full size-96 blur-3xl bg-puerto-rico-500"></div>
+      <p class="text-white sticky z-10 px-10 text-center">Tendrás toda la información de tus pacientes en un solo lugar gestionando todo con mucha mayor autonomía</p>
+      <Desktop class="absolute bottom-10 left-[110px]"/>
+    </div>
+  </div>
+  <div class="pt-8 flex justify-center">
+    <a
+      class="inline-block bg-gradient-to-r from-puerto-rico-500 to-puerto-rico-600 text-white font-bold py-6 px-5 sm:px-10 md:px-20 rounded-2xl hover:bg-gradient-to-r hover:from-puerto-rico-600 hover:to-puerto-rico-700 transition duration-300 ease-in-out"
+      href="https://wa.me/573106872773?text=Hola,%20me%20interesa%20saber%20más%20acerca%20de%20Wofy"
+      target='_blank'
+      >
+        Contáctanos ahora
+    </a>
+  </div>
+</section>
