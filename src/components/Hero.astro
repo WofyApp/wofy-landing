@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import heroWofy from '../assets/hero-image-bg.png';
+---
+
+<section class="px-8 sm:px-20 hero mt-10 md:mt-20">
+  <div
+    class="flex flex-col items-center justify-center lg:gap-20 lg:flex-row xl:gap-36"
+  >
+    <div class="text-center lg:text-left flex-col max-w-96">
+      <h1 class="text-4xl lg:text-5xl text-wofy-black font-bold">
+        Transforma tu <span class="text-puerto-rico-400"
+          >clínica</span
+        > veterinaria con la <span class="text-puerto-rico-400"
+          >tecnología</span
+        > más intuitiva
+      </h1>
+      <p class="text-lg mt-4">
+        Facilita tu vida, la de tus clientes y la de tus
+        peluditos pacientes
+      </p>
+
+      <div class="pt-16">
+        <a
+          class="inline-block bg-puerto-rico-600 text-white font-bold py-6 px-5 sm:px-10 rounded-2xl hover:bg-puerto-rico-700 transition duration-300 ease-in-out"
+          href="#servicios"
+          >Conoce más sobre Wofy
+        </a>
+      </div>
+    </div>
+    <div
+      class="flex flex-col min-w-[340px] max-w-[500px] items-center justify-center mt-14"
+    >
+      <Image
+        src={heroWofy}
+        alt="Connect with your clients"
+        class=""
+        loading="eager"
+      />
+    </div>
+  </div>
+</section>
