@@ -16,15 +16,15 @@ import Desktop from "../components/Desktop.astro"
   <div class="flex flex-col lg:flex-row justify-center items-center mt-10 gap-8">
     <div class="bg-puerto-rico-700 border border-puerto-rico-600 max-w-96 w-80 h-96 shadow-md rounded-2xl relative overflow-hidden">
       <h3 class="text-white sticky z-10 px-10 py-8 text-center font-semibold">Agendamiento automatizado</h3>
-      <div class="absolute top-1/3 -left-32 -translate-y-1/2 rounded-full size-80 blur-3xl bg-puerto-rico-500"></div>
-      <div class="absolute -top-56 left-1/2 -translate-x-1/2 rounded-full size-96 blur-3xl bg-puerto-rico-500"></div>
+      <div class="absolute top-1/3 -left-32 -translate-y-1/2 rounded-full size-80 blur-3xl transform-gpu bg-puerto-rico-500"></div>
+      <div class="absolute -top-56 left-1/2 -translate-x-1/2 rounded-full size-96 blur-3xl transform-gpu bg-puerto-rico-500"></div>
       <p class="text-white sticky z-10 px-10 text-center">Mediante el uso de Whatsapp podrás recibir citas de tus clientes en instantes y de forma centralizada</p>
       <WhatsappIcon class="absolute bottom-10 left-[110px]"/>
     </div>
     <div class="bg-puerto-rico-700 border border-puerto-rico-600 max-w-96 w-80 h-96 shadow-md rounded-2xl relative overflow-hidden">
-      <h3 class="text-white sticky z-10 px-10 py-8 text-center font-semibold">Portal web avanzado</h3>
-      <div class="absolute top-1/3 -left-32 -translate-y-1/2 rounded-full size-80 blur-3xl bg-puerto-rico-500"></div>
-      <div class="absolute -top-56 left-1/2 -translate-x-1/2 rounded-full size-96 blur-3xl bg-puerto-rico-500"></div>
+      <h3 class="text-white sticky z-20 px-10 py-8 text-center font-semibold">Portal web avanzado</h3>
+      <div class="absolute -top-56 left-1/2 -translate-x-1/2 rounded-full size-96 blur-3xl transform-gpu bg-puerto-rico-500"></div>
+      <div class="absolute top-1/3 -left-32 -translate-y-1/2 rounded-full size-80 blur-3xl transform-gpu bg-puerto-rico-500"></div>
       <p class="text-white sticky z-10 px-10 text-center">Tendrás toda la información de tus pacientes en un solo lugar gestionando todo con mucha mayor autonomía</p>
       <Desktop class="absolute bottom-10 left-[110px]"/>
     </div>
@@ -39,3 +39,10 @@ import Desktop from "../components/Desktop.astro"
     </a>
   </div>
 </section>
+
+<style>
+  .blur-3.5xl {
+  --tw-blur: blur(60px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+</style>
