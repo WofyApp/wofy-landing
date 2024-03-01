@@ -1,3 +1,47 @@
-<footer>
-  Hola, soy el footer
+---
+import { Image } from 'astro:assets';
+import logoWofyInverted from '../assets/logo-wofy-invertido.png';
+import FacebookIcon from '../components/Facebook.astro';
+import LinkedInIcon from '../components/LinkedIn.astro';
+import InstagramIcon from '../components/Instagram.astro';
+---
+
+<footer class="bg-puerto-rico-600">
+	<div class="flex flex-col w-full px-4 sm:px-10 py-20 relative">
+		<div
+			class="flex flex-col items-start gap-4 sm:gap-0 sm:flex-row sm:justify-between border-b pb-3 border-puerto-rico-50/40"
+		>
+			<Image
+				src={logoWofyInverted}
+				alt="wofy"
+				class="w-20 fill-puerto-rico-50"
+				loading="eager"
+			/>
+			<div class="flex items-start justify-center">
+				<a
+					href="/"
+					target="_blank"
+					class="text-white hover:text-puerto-rico-50"
+				>
+					<FacebookIcon class="w-8 h-8" />
+				</a>
+				<a
+					href="/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-white hover:text-puerto-rico-50"
+				>
+					<LinkedInIcon class="w-8 h-8" />
+				</a>
+				<a
+					href="/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="text-white hover:text-puerto-rico-50"
+				>
+					<InstagramIcon class="w-8 h-8" />
+				</a>
+			</div>
+		</div>
+	</div>
 </footer>
