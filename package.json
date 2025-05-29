@@ -1,6 +1,7 @@
 {
   "name": "wofy-landing",
   "type": "module",
+  "packageManager": "pnpm@9.15.4",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
