@@ -1,42 +1,101 @@
 ---
 import { Image } from 'astro:assets';
-import heroWofy from '../assets/hero-image-bg.png';
+import heroWofyDesktop from '../assets/hero-image-desktop.png';
+import heroWofyMobile from '../assets/hero-image-mobile.png';
 ---
 
-<section class="px-8 sm:px-20 hero mt-10 md:mt-20">
-  <div
-    class="flex flex-col items-center justify-center lg:gap-20 lg:flex-row xl:gap-36"
-  >
-    <div class="text-center lg:text-left flex-col max-w-96">
-      <h1 class="text-4xl lg:text-5xl text-wofy-black font-bold">
-        Transforma tu <span class="text-puerto-rico-400"
-          >clínica</span
-        > veterinaria con la <span class="text-puerto-rico-400"
-          >tecnología</span
-        > más intuitiva
-      </h1>
-      <p class="text-lg mt-4">
-        Facilita tu vida, la de tus clientes y la de tus
-        peluditos pacientes
-      </p>
+<section class="px-8 sm:px-20 mt-4 md:mt-10">
+	<div class="mx-auto max-w-6xl px-6 pb-14 pt-2 md:pb-20 md:pt:24">
+		<div class="text-center">
+			<a
+				href="#marketing"
+				class="relative inline-flex rounded-full p-px
+					bg-[linear-gradient(90deg,#44cac0,#7ef0e6,#44cac0)]
+					bg-size[200%_200%]
+					animate-[borderMove_4s_linear_infinite]
+					shadow-[0_0_20px_rgba(68,202,192,0.25)]
+					transition-all duration-300
+					hover:scale-[1.04]
+					hover:shadow-[0_0_30px_rgba(68,202,192,0.4)]
+					focus:outline-none focus:ring-2 focus:ring-[#44cac0]/40"
+			>
+				<span
+					class="flex items-center gap-2 rounded-full bg-white px-4 py-1 text-xs shadow-sm"
+				>
+					<span
+						class="rounded-full bg-[#ff1fa9]/10 text-[#ff1fa9] px-2 py-0.5 font-semibold tracking-wide"
+					>
+						NEW
+					</span>
 
-      <div class="pt-16">
-        <a
-          class="inline-block bg-puerto-rico-600 text-white font-bold py-6 px-5 sm:px-10 rounded-2xl hover:bg-puerto-rico-700 transition duration-300 ease-in-out"
-          href="#servicios"
-          >Conoce más sobre Wofy
-        </a>
-      </div>
-    </div>
-    <div
-      class="flex flex-col min-w-[340px] max-w-[500px] items-center justify-center mt-14"
-    >
-      <Image
-        src={heroWofy}
-        alt="Connect with your clients"
-        class=""
-        loading="eager"
-      />
-    </div>
-  </div>
+					<span class="text-wofy-black font-medium">
+						Marketing inteligente por WhatsApp
+					</span>
+				</span>
+			</a>
+
+			<!--Title -->
+			<h1
+				id="hero-title"
+				class="mx-auto mt-5 max-w-3xl text-balance text-4xl font-semibold tracking-tight text-black md:text-6xl"
+			>
+				La <span class="text-puerto-rico-600">plataforma</span> todo-en-uno
+				para veterinarias <span class="text-puerto-rico-600"
+					>modernas</span
+				>.
+			</h1>
+
+			<!-- Subtitle -->
+			<p
+				class="mx-auto mt-5 max-w-2xl text-pretty text-md leading-relaxed text-muted md:text-lg"
+			>
+				Centraliza agenda, servicios, historia clínica y marketing
+				inteligente en un solo sistema fácil de usar.
+			</p>
+			<!-- CTAs -->
+			<div class="mt-8 flex items-center justify-center gap-3">
+				<a
+					href="#"
+					class="inline-block bg-wofy-white text-puerto-rico-500 text-sm font-bold py-3 px-3 border-puerto-rico-500 border rounded-2xl sm:px-8 sm:text-lg hover:bg-puerto-rico-500 hover:text-wofy-white transition duration-300 ease-in-out"
+					aria-label="Ver cómo funciona Wofy"
+				>
+					Ver cómo funciona
+				</a>
+				<a
+					href="https://wa.link/y8hfqg"
+					target="_blank"
+					class="inline-block bg-puerto-rico-500 text-white text-sm font-bold py-3 px-5 rounded-2xl sm:px-10 sm:text-lg hover:bg-puerto-rico-700 transition duration-300 ease-in-out"
+					aria-label="Ver cómo funciona Wofy"
+				>
+					Empieza gratis ahora
+				</a>
+			</div>
+			<!-- Micro trust line -->
+			<p class="mt-5 text-slate-900/70 text-xs md:text-sm text-muted">
+				Implementación instantánea • Soporte cercano • No se requiere tarjeta de crédito para iniciar
+			</p>
+		</div>
+		<!-- Mockups -->
+		<div class="relative mx-auto mt-12 max-w-7xl">
+			<!-- Mobile -->
+			<div class="md:hidden">
+				<Image
+					src={heroWofyMobile}
+					alt="Vista de la plataforma Wofy"
+					class="w-full h-auto"
+					loading="eager"
+					fetchpriority="high"
+				/>
+			</div>
+			<!-- Desktop -->
+			<div class="hidden md:block">
+				<Image
+					src={heroWofyDesktop}
+					alt="Vista de la plataforma"
+					class="w-full h-auto"
+					loading="eager"
+				/>
+			</div>
+		</div>
+	</div>
 </section>
