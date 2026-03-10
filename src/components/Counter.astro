@@ -1,0 +1,117 @@
+<section class="py-20 bg-white">
+	<div class="container mx-auto px-6 mb-10 md:mb-20">
+		<h2 class="text-3xl font-semibold text-center mb-5 md:text-5xl">
+			Wofy ya está moviendo veterinarias
+		</h2>
+    <p class="text-lg text-center text-wofy-black md:text-xl md:mb-24">
+      Conoce el impacto que Wofy está teniendo en las clínicas veterinarias que ya lo están usando.
+    </p>
+	</div>
+	<div
+		class="max-w-6xl mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8 mb-10 text-center"
+	>
+		<div>
+			<p
+				class="text-5xl font-semibold text-[#44cac0] tracking-tight leading-none"
+			>
+				<span class="opacity-80">+</span><span
+					class="count"
+					data-count="1000">0</span
+				>
+			</p>
+			<p class="mt-2 text-sm text-wofy-black/80">Citas gestionadas</p>
+		</div>
+
+		<div>
+			<p
+				class="text-5xl font-semibold text-[#44cac0] tracking-tight leading-none"
+			>
+				<span class="opacity-80">+</span><span
+					class="count"
+					data-count="400">0</span
+				>
+			</p>
+			<p class="mt-2 text-sm text-wofy-black/80">Recordatorios enviados</p>
+		</div>
+
+		<div>
+			<p
+				class="text-5xl font-semibold text-[#44cac0] tracking-tight leading-none"
+			>
+				<span class="opacity-80">+</span><span
+					class="count"
+					data-count="550">0</span
+				>
+			</p>
+			<p class="mt-2 text-sm text-wofy-black/80">Mascotas registradas</p>
+		</div>
+
+		<div>
+			<p
+				class="text-5xl font-semibold text-[#44cac0] tracking-tight leading-none"
+			>
+				<span class="count" data-count="5">0</span>
+			</p>
+			<p class="mt-2 text-sm text-wofy-black/80">Clínicas en piloto</p>
+		</div>
+	</div>
+</section>
+
+<script is:inline>
+	(function () {
+		const reduceMotion = window.matchMedia(
+			'(prefers-reduced-motion: reduce)'
+		).matches;
+
+		const formatNumber = (n) => {
+			// Formato es-CO: 1.234
+			return new Intl.NumberFormat('es-CO').format(Math.round(n));
+		};
+
+		const animateCount = (el, to, duration = 1200) => {
+			if (reduceMotion) {
+				el.textContent = formatNumber(to);
+				return;
+			}
+
+			const start = performance.now();
+			const from = 0;
+
+			// Easing suave
+			const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+			const step = (now) => {
+				const progress = Math.min((now - start) / duration, 1);
+				const eased = easeOutCubic(progress);
+				const value = from + (to - from) * eased;
+
+				el.textContent = formatNumber(value);
+
+				if (progress < 1) requestAnimationFrame(step);
+			};
+
+			requestAnimationFrame(step);
+		};
+
+		const counters = document.querySelectorAll('.count[data-count]');
+
+		const run = (entries, observer) => {
+			for (const entry of entries) {
+				if (!entry.isIntersecting) continue;
+
+				const el = entry.target;
+				const to = Number(el.dataset.count || '0');
+
+				if (!el.dataset.animated) {
+					el.dataset.animated = 'true';
+					animateCount(el, to, 1200);
+				}
+
+				observer.unobserve(el);
+			}
+		};
+
+		const observer = new IntersectionObserver(run, { threshold: 0.35 });
+		counters.forEach((c) => observer.observe(c));
+	})();
+</script>

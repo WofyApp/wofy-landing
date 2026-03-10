@@ -8,7 +8,7 @@ export default {
 
 		extend: {
 			colors: {
-				"wofy-black": " #3e4653",
+				"wofy-black": "#3e4653",
 				"wofy-white": "#fdfdfd",
 				'puerto-rico': {
 					'50': '#f0fdf9',

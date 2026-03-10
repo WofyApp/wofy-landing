@@ -1,0 +1,111 @@
+---
+import { Image } from 'astro:assets';
+import marketingFeature from '../assets/marketing-feature.png';
+import historialFeature from '../assets/historial-feature.png';
+import agendaFeature from '../assets/agenda-feature.png';
+---
+
+<section class="bg-puerto-rico-50/80">
+	<div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+		<div class="text-center">
+			<div class="relative inline-flex rounded-full p-px">
+				<span
+					class="flex items-center gap-2 rounded-full bg-puerto-rico-600 px-5 py-2 text-xs"
+				>
+					<span class="text-wofy-white font-medium text-sm">
+						Características destacadas
+					</span>
+				</span>
+			</div>
+			<h2 class="mt-8 max-w-4xl mx-auto">
+				<span class="text-3xl font-semibold md:text-5xl">
+					Todo lo que tu veterinaria necesita en una sola plataforma
+				</span>
+			</h2>
+			<p class="mt-8 text-lg text-wofy-black max-w-2xl mx-auto">
+				Con Wofy haz más eficiente tu clínica veterinaria, ahorra tiempo
+				y mejora la experiencia de tus clientes.
+			</p>
+		</div>
+		<div>
+			<article>
+				<div
+					class="mt-12 flex flex-col justify-center items-center px-6 py-10 gap-5 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 md:flex-row md:px-16"
+				>
+					<div class="max-w-xl">
+						<h2
+							class="text-3xl md:text-5xl font-medium md:font-semibold mb-6"
+						>
+							Llega al cliente correcto en el momento adecuado
+						</h2>
+						<p class="text-wofy-black text-md md:text-lg">
+							Con Wofy, puedes enviar mensajes personalizados a
+							tus clientes en momentos clave, como recordatorios
+							de citas, promociones especiales o recomendaciones
+						</p>
+					</div>
+					<div>
+						<Image
+							class="w-sm md:w-xl max-w-2xl"
+							src={marketingFeature}
+							alt="Marketing feature"
+						/>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div
+					class="mt-12 flex flex-col justify-center items-center px-6 py-10 gap-5 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 md:flex-row-reverse md:px-16"
+				>
+					<div class="max-w-xl">
+						<h2
+							class="text-3xl md:text-5xl font-medium md:font-semibold mb-6"
+						>
+							Consulta el historial médico de tus pacientes en
+							segundos
+						</h2>
+						<p class="text-wofy-black text-md md:text-lg">
+							Olvidate de buscar entre papeles o sistemas
+							complicados. Con Wofy, puedes acceder al historial
+							médico de tus pacientes en segundos
+						</p>
+					</div>
+					<div>
+						<Image
+							class="w-xs md:w-xl max-w-2xl"
+							src={historialFeature}
+							alt="Historial feature"
+						/>
+					</div>
+				</div>
+			</article>
+			<article>
+				<div
+					class="mt-12 flex flex-col justify-center items-center px-6 py-10 gap-5 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 md:flex-row md:px-16"
+				>
+					<div class="max-w-xl">
+						<h2
+							class="text-3xl md:text-5xl font-medium md:font-semibold mb-6"
+						>
+							Organiza tu agenda y mejora la experiencia de tus
+							clientes
+						</h2>
+						<p class="text-wofy-black text-md md:text-lg">
+							Wofy es excelente para organizar tu agenda de manera
+							sencilla y eficiente, evitando solapamientos y
+							garantizando una experiencia fluida para tus
+							clientes
+						</p>
+					</div>
+					<div>
+						<Image
+							class="w-xs md:w-lg max-w-2xl"
+							src={agendaFeature}
+							alt="Agenda feature"
+						/>
+					</div>
+				</div>
+			</article>
+		</div>
+	</div>
+</section>

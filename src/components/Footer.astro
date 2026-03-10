@@ -1,9 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import logoWofyInverted from '../assets/logo-wofy-invertido.png';
-import FacebookIcon from '../components/Facebook.astro';
-import LinkedInIcon from '../components/LinkedIn.astro';
-import InstagramIcon from '../components/Instagram.astro';
+import FacebookIcon from '../components/Icons/Facebook.astro';
+import LinkedInIcon from '../components/Icons/LinkedIn.astro';
+import InstagramIcon from '../components/Icons/Instagram.astro';
 ---
 
 <footer class="bg-puerto-rico-600">
@@ -34,7 +34,7 @@ import InstagramIcon from '../components/Instagram.astro';
 					<LinkedInIcon class="w-8 h-8" />
 				</a>
 				<a
-					href="https://www.instagram.com/wofyappco/"
+					href="https://www.instagram.com/wofy.app/"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="text-white hover:text-puerto-rico-50"
@@ -43,43 +43,43 @@ import InstagramIcon from '../components/Instagram.astro';
 				</a>
 			</div>
 		</div>
-		<div class="flex flex-row mt-4 gap-20 justify-start">
-				<a
-					href="/privacy"
-					target="_blank"
-					class="text-white hover:text-wofy-black"
-				>
-					Politica de Privacidad
-				</a>
-				<a
-					href="/#nosotros"
-					target="_blank"
-					class="text-white hover:text-wofy-black"
-				>
-					Nosotros
-				</a>
-				<a
-					href="https://portal.wofy.app"
-					target="_blank"
-					class="text-white hover:text-wofy-black"
-				>
-					Wofy App
-				</a>
-				<a
-					href="/#servicios"
-					target="_blank"
-					class="text-white hover:text-wofy-black"
-				>
-					Servicios
-				</a>
-				<a
-					href="https://wa.me/573132464670?text=Hola,%20me%20interesa%20saber%20m%C3%A1s%20acerca%20de%20Wofy"
-					target="_blank"
-					class="text-white hover:text-wofy-black"
-				>
-					Contáctanos
-				</a>
-			
+		<div class="grid grid-cols-2 md:grid-cols-5 gap-x-8 gap-y-4 mt-4">
+			<a
+				href="/privacy"
+				class="text-white hover:text-wofy-black transition-colors"
+			>
+				Política de Privacidad
+			</a>
+
+			<a
+				href="/#nosotros"
+				class="text-white hover:text-wofy-black transition-colors"
+			>
+				Nosotros
+			</a>
+
+			<a
+				href="https://portal.wofy.app"
+				target="_blank"
+				class="text-white hover:text-wofy-black transition-colors"
+			>
+				Inicia sesión
+			</a>
+
+			<a
+				href="/#servicios"
+				class="text-white hover:text-wofy-black transition-colors"
+			>
+				Servicios
+			</a>
+
+			<a
+				href="https://wa.link/y8hfqg"
+				target="_blank"
+				class="text-white hover:text-wofy-black transition-colors"
+			>
+				Contáctanos
+			</a>
 		</div>
 	</div>
 </footer>
