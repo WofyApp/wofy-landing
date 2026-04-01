@@ -6,19 +6,42 @@ import Footer from '../components/Footer.astro';
 
 interface Props {
 	title: string;
+	description?: string;
+	ogType?: 'website' | 'article';
 }
 
-const { title } = Astro.props;
+const {
+	title,
+	description = 'Wofy, Software para Veterinarias, Gestiona citas, historias clínicas por mascota, recordatorios por WhatsApp, vacunas, clientes y certificados por correo.',
+	ogType = 'website',
+} = Astro.props;
+
+const canonical = Astro.site
+	? new URL(Astro.url.pathname, Astro.site).toString()
+	: Astro.url.toString();
+const robotsContent = 'index, follow';
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Wofy, Software para Veterinarias, Gestiona citas, historias clínicas por mascota, recordatorios por WhatsApp, vacunas, clientes y certificados por correo." />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="canonical" href={canonical} />
+		<meta name="robots" content={robotsContent} />
+		<meta name="theme-color" content="#44cac0" />
 		<meta name="generator" content={Astro.generator} />
+		<meta property="og:locale" content="es_CO" />
+		<meta property="og:type" content={ogType} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:site_name" content="Wofy" />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
 
 		<title>{title}</title>
 	</head>
