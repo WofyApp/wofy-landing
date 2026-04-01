@@ -1,0 +1,261 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import historialFeature from '../assets/historial-feature.png';
+import heroWofyDesktop from '../assets/hero-image-desktop.png';
+import dashboardImage from '../assets/dashboard.png';
+
+const title =
+	'Historia clinica veterinaria para clinicas modernas | Evolucion, vacunas y consentimientos | Wofy';
+const description =
+	'Wofy ayuda a llevar la historia clinica veterinaria de cada mascota con consultas, evolucion, vacunas, archivos y consentimientos informados digitales en un solo flujo.';
+
+const quickWins = [
+	{
+		title: 'Historial por mascota',
+		description:
+			'Consulta antecedentes, notas y estado clinico sin perder tiempo buscando en varias partes.',
+	},
+	{
+		title: 'Vacunas y archivos',
+		description:
+			'Mantiene vacunas, documentos y registros clinicos dentro de una misma vista.',
+	},
+	{
+		title: 'Consentimientos digitales',
+		description:
+			'Integra consentimientos informados digitales dentro del seguimiento clinico diario.',
+	},
+	{
+		title: 'Menos friccion al atender',
+		description:
+			'El equipo encuentra la informacion mas rapido y atiende con mas contexto.',
+	},
+];
+
+const operatingPoints = [
+	'Reduce tiempo perdido buscando antecedentes, archivos o notas clinicas.',
+	'Da mas continuidad a la atencion cuando distintos miembros del equipo revisan el caso.',
+	'Conecta historia clinica, consentimientos y recordatorios dentro del mismo proceso.',
+	'Mejora la trazabilidad de cada paciente cuando la clinica empieza a crecer.',
+];
+---
+
+<Layout title={title} description={description}>
+	<main>
+		<section class="px-8 sm:px-20 mt-4 md:mt-10">
+			<div class="mx-auto max-w-6xl px-6 pb-14 pt-2 md:pb-20">
+				<div class="text-center">
+					<a
+						href="#modulos"
+						class="relative inline-flex rounded-full p-px
+							bg-[linear-gradient(90deg,#44cac0,#7ef0e6,#44cac0)]
+							bg-size[200%_200%]
+							animate-[borderMove_4s_linear_infinite]
+							shadow-[0_0_20px_rgba(68,202,192,0.25)]
+							transition-all duration-300
+							hover:scale-[1.04]
+							hover:shadow-[0_0_30px_rgba(68,202,192,0.4)]
+							focus:outline-none focus:ring-2 focus:ring-[#44cac0]/40"
+					>
+						<span
+							class="flex items-center gap-2 rounded-full bg-white px-4 py-1 text-xs shadow-sm"
+						>
+							<span
+								class="rounded-full bg-[#ff1fa9]/10 px-2 py-0.5 font-semibold tracking-wide text-[#ff1fa9]"
+							>
+								CLINICA
+							</span>
+							<span class="font-medium text-wofy-black">
+								Consulta el historial desde una sola vista
+							</span>
+						</span>
+					</a>
+
+					<h1
+						class="mx-auto mt-5 max-w-4xl text-balance text-4xl font-semibold tracking-tight text-black md:text-6xl"
+					>
+						La <span class="text-puerto-rico-600">historia clinica veterinaria</span>
+						para clinicas que quieren atender con mas contexto y menos friccion.
+					</h1>
+
+					<p
+						class="mx-auto mt-5 max-w-3xl text-pretty text-md leading-relaxed text-wofy-black md:text-lg"
+					>
+						Wofy organiza la evolucion de cada mascota con consultas, vacunas,
+						archivos, alertas y consentimientos informados digitales dentro del
+						mismo flujo. Si hoy parte de esa informacion vive en papel, chats o
+						carpetas sueltas, esta pagina esta hecha para ese problema.
+					</p>
+
+					<div class="mt-8 flex items-center justify-center gap-3">
+						<a
+							href="https://wa.link/y8hfqg"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-block rounded-2xl bg-puerto-rico-500 px-5 py-3 text-sm font-bold text-white transition duration-300 ease-in-out hover:bg-puerto-rico-700 sm:px-10 sm:text-lg"
+						>
+							Quiero ver el historial
+						</a>
+						<a
+							href="#modulos"
+							class="inline-block rounded-2xl border border-puerto-rico-500 bg-wofy-white px-3 py-3 text-sm font-bold text-puerto-rico-500 transition duration-300 ease-in-out hover:bg-puerto-rico-500 hover:text-wofy-white sm:px-8 sm:text-lg"
+						>
+							Ver como funciona
+						</a>
+					</div>
+
+					<p class="mt-5 text-xs text-slate-900/70 md:text-sm">
+						Mas contexto clinico • Mejor seguimiento • Menos busqueda manual
+					</p>
+				</div>
+
+				<div class="relative mx-auto mt-12 max-w-5xl rounded-[2rem] border border-slate-200/70 bg-white p-4 shadow-xl md:p-6">
+					<Image
+						src={historialFeature}
+						alt="Pantalla de historia clinica veterinaria en Wofy con consultas, notas, vacunas y consentimientos"
+						class="h-auto w-full"
+						loading="eager"
+						fetchpriority="high"
+					/>
+				</div>
+
+				<div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+					{
+						quickWins.map((item) => (
+							<article class="rounded-2xl border border-slate-200/70 bg-white p-6 shadow-sm">
+								<h2 class="text-xl font-semibold text-black">{item.title}</h2>
+								<p class="mt-3 text-sm leading-7 text-wofy-black md:text-base">
+									{item.description}
+								</p>
+							</article>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<section id="modulos" class="bg-puerto-rico-50/80">
+			<div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+				<div class="text-center">
+					<div class="relative inline-flex rounded-full p-px">
+						<span
+							class="flex items-center gap-2 rounded-full bg-puerto-rico-600 px-5 py-2 text-xs"
+						>
+							<span class="text-sm font-medium text-wofy-white">
+								Lo que necesitas para atender mejor
+							</span>
+						</span>
+					</div>
+					<h2 class="mx-auto mt-8 max-w-4xl">
+						<span class="text-3xl font-semibold md:text-5xl">
+							Una historia clinica veterinaria que no se queda corta en el dia a dia
+						</span>
+					</h2>
+					<p class="mx-auto mt-8 max-w-2xl text-lg text-wofy-black">
+						No basta con guardar registros. La historia clinica tiene que dejarte
+						entender rapido que paso con cada paciente, que sigue y que
+						documentos hacen parte del caso.
+					</p>
+				</div>
+
+				<div>
+					<article>
+						<div
+							class="mt-12 flex flex-col items-center justify-center gap-5 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row md:px-16"
+						>
+							<div class="max-w-xl">
+								<h2
+									class="mb-6 text-3xl font-medium md:text-5xl md:font-semibold"
+								>
+									Revisa consultas, vacunas y evolucion en una sola cronologia
+								</h2>
+								<p class="text-md text-wofy-black md:text-lg">
+									Accede rapido a la informacion clinica de cada mascota para
+									atender con mas contexto. Menos tiempo buscando antecedentes y
+									mas seguridad al momento de tomar decisiones dentro de consulta.
+								</p>
+							</div>
+							<div>
+								<Image
+									class="w-xs md:w-xl max-w-2xl"
+									src={historialFeature}
+									alt="Cronologia de historia clinica veterinaria con consultas, vacunas y notas en Wofy"
+								/>
+							</div>
+						</div>
+					</article>
+
+					<article>
+						<div
+							class="mt-12 flex flex-col items-center justify-center gap-5 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row-reverse md:px-16"
+						>
+							<div class="max-w-xl">
+								<h2
+									class="mb-6 text-3xl font-medium md:text-5xl md:font-semibold"
+								>
+									Integra consentimientos informados digitales dentro del flujo clinico
+								</h2>
+								<p class="text-md text-wofy-black md:text-lg">
+									Cuando los consentimientos viven junto al historial, el proceso
+									clinico se siente mas completo y menos fragmentado. Eso te ayuda
+									a mantener mejor trazabilidad sin salir del contexto del
+									paciente.
+								</p>
+							</div>
+							<div>
+								<Image
+									class="w-sm md:w-xl max-w-2xl"
+									src={heroWofyDesktop}
+									alt="Vista de Wofy con historia clinica, documentos y modulos de seguimiento veterinario"
+								/>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="px-8 sm:px-20 mt-20 lg:mt-32">
+			<div class="mx-auto flex max-w-6xl flex-col items-center gap-10 lg:flex-row lg:gap-14">
+				<div class="max-w-2xl">
+					<h2 class="text-3xl font-semibold text-black md:text-5xl">
+						Una mejor historia clinica tambien mejora la continuidad del cuidado
+					</h2>
+					<p class="mt-6 text-lg leading-8 text-wofy-black">
+						Cuando la informacion clinica esta ordenada, el equipo no depende de
+						la memoria ni de un solo veterinario para entender un caso. Wofy
+						ayuda a que el historial viva conectado con el movimiento general de
+						la clinica.
+					</p>
+					<ul class="mt-8 space-y-4">
+						{
+							operatingPoints.map((point) => (
+								<li class="flex gap-3 text-base leading-7 text-wofy-black md:text-lg">
+									<span class="mt-2 h-2.5 w-2.5 rounded-full bg-puerto-rico-500"></span>
+									<span>{point}</span>
+								</li>
+							))
+						}
+					</ul>
+					<a
+						href="https://wa.link/y8hfqg"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="mt-8 inline-block rounded-2xl bg-puerto-rico-500 px-6 py-4 text-base font-bold text-white transition duration-300 ease-in-out hover:bg-puerto-rico-700"
+					>
+						Hablar con Wofy
+					</a>
+				</div>
+
+				<div class="w-full max-w-3xl rounded-[2rem] border border-slate-200/70 bg-white p-4 shadow-xl md:p-6">
+					<Image
+						src={dashboardImage}
+						alt="Panel de Wofy conectado con el movimiento de pacientes, citas e ingresos de la clinica"
+						class="h-auto w-full"
+					/>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>

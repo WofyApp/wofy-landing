@@ -1,0 +1,259 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import marketingFeature from '../assets/marketing-feature.png';
+import chatImage from '../assets/chat.png';
+import heroWofyDesktop from '../assets/hero-image-desktop.png';
+
+const title =
+	'Recordatorios por WhatsApp para veterinarias | Confirmaciones, vacunas y seguimiento | Wofy';
+const description =
+	'Wofy ayuda a las clinicas veterinarias a enviar recordatorios por WhatsApp para citas, vacunas, controles y seguimientos, con mensajes mas ordenados y menos carga manual para el equipo.';
+
+const quickWins = [
+	{
+		title: 'Menos ausencias',
+		description:
+			'Confirma citas y recuerda controles antes de que se pierdan en el dia a dia.',
+	},
+	{
+		title: 'Mensajes en momentos clave',
+		description:
+			'Activa recordatorios para vacunas, seguimientos y fechas importantes de cada mascota.',
+	},
+	{
+		title: 'WhatsApp mas ordenado',
+		description:
+			'Reduce improvisacion con procesos mas claros para comunicarte con tutores.',
+	},
+	{
+		title: 'Menos trabajo manual',
+		description:
+			'El equipo deja de perseguir recordatorios uno por uno y gana tiempo operativo.',
+	},
+];
+
+const operatingPoints = [
+	'Recordatorios oportunos ayudan a bajar ausencias y retrasos en la agenda.',
+	'La recepcion puede coordinar mejor cuando los mensajes siguen un flujo mas claro.',
+	'Tambien sirve para vacunas, controles y seguimientos despues de la cita.',
+	'WhatsApp deja de ser un cuello de botella y se vuelve parte del proceso.',
+];
+---
+
+<Layout title={title} description={description}>
+	<main>
+		<section class="px-8 sm:px-20 mt-4 md:mt-10">
+			<div class="mx-auto max-w-6xl px-6 pb-14 pt-2 md:pb-20">
+				<div class="text-center">
+					<a
+						href="#modulos"
+						class="relative inline-flex rounded-full p-px
+							bg-[linear-gradient(90deg,#44cac0,#7ef0e6,#44cac0)]
+							bg-size[200%_200%]
+							animate-[borderMove_4s_linear_infinite]
+							shadow-[0_0_20px_rgba(68,202,192,0.25)]
+							transition-all duration-300
+							hover:scale-[1.04]
+							hover:shadow-[0_0_30px_rgba(68,202,192,0.4)]
+							focus:outline-none focus:ring-2 focus:ring-[#44cac0]/40"
+					>
+						<span
+							class="flex items-center gap-2 rounded-full bg-white px-4 py-1 text-xs shadow-sm"
+						>
+							<span
+								class="rounded-full bg-[#ff1fa9]/10 px-2 py-0.5 font-semibold tracking-wide text-[#ff1fa9]"
+							>
+								WHATSAPP
+							</span>
+							<span class="font-medium text-wofy-black">
+								Recordatorios utiles para cada tutor
+							</span>
+						</span>
+					</a>
+
+					<h1
+						class="mx-auto mt-5 max-w-4xl text-balance text-4xl font-semibold tracking-tight text-black md:text-6xl"
+					>
+						Los <span class="text-puerto-rico-600">recordatorios por WhatsApp</span>
+						para veterinarias que ayudan a reducir ausencias y mejorar el seguimiento.
+					</h1>
+
+					<p
+						class="mx-auto mt-5 max-w-3xl text-pretty text-md leading-relaxed text-wofy-black md:text-lg"
+					>
+						Wofy ayuda a enviar recordatorios por WhatsApp para citas,
+						vacunas, controles y seguimientos desde un flujo mas claro para la
+						clinica. Si hoy el equipo persigue cada mensaje a mano, esta pagina
+						esta hecha para ese problema.
+					</p>
+
+					<div class="mt-8 flex items-center justify-center gap-3">
+						<a
+							href="https://wa.link/y8hfqg"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-block rounded-2xl bg-puerto-rico-500 px-5 py-3 text-sm font-bold text-white transition duration-300 ease-in-out hover:bg-puerto-rico-700 sm:px-10 sm:text-lg"
+						>
+							Quiero ver los recordatorios
+						</a>
+						<a
+							href="#modulos"
+							class="inline-block rounded-2xl border border-puerto-rico-500 bg-wofy-white px-3 py-3 text-sm font-bold text-puerto-rico-500 transition duration-300 ease-in-out hover:bg-puerto-rico-500 hover:text-wofy-white sm:px-8 sm:text-lg"
+						>
+							Ver como funciona
+						</a>
+					</div>
+
+					<p class="mt-5 text-xs text-slate-900/70 md:text-sm">
+						Mas confirmaciones • Menos ausencias • Menos carga manual para recepcion
+					</p>
+				</div>
+
+				<div class="relative mx-auto mt-12 max-w-5xl rounded-[2rem] border border-slate-200/70 bg-white p-4 shadow-xl md:p-6">
+					<Image
+						src={marketingFeature}
+						alt="Recordatorios por WhatsApp para veterinarias en Wofy con segmentacion y mensajes a tutores"
+						class="h-auto w-full"
+						loading="eager"
+						fetchpriority="high"
+					/>
+				</div>
+
+				<div class="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+					{
+						quickWins.map((item) => (
+							<article class="rounded-2xl border border-slate-200/70 bg-white p-6 shadow-sm">
+								<h2 class="text-xl font-semibold text-black">{item.title}</h2>
+								<p class="mt-3 text-sm leading-7 text-wofy-black md:text-base">
+									{item.description}
+								</p>
+							</article>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<section id="modulos" class="bg-puerto-rico-50/80">
+			<div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+				<div class="text-center">
+					<div class="relative inline-flex rounded-full p-px">
+						<span
+							class="flex items-center gap-2 rounded-full bg-puerto-rico-600 px-5 py-2 text-xs"
+						>
+							<span class="text-sm font-medium text-wofy-white">
+								Lo que mas pesa en la operacion diaria
+							</span>
+						</span>
+					</div>
+					<h2 class="mx-auto mt-8 max-w-4xl">
+						<span class="text-3xl font-semibold md:text-5xl">
+							WhatsApp deja de ser una carga cuando los recordatorios siguen un proceso
+						</span>
+					</h2>
+					<p class="mx-auto mt-8 max-w-2xl text-lg text-wofy-black">
+						No se trata solo de enviar mensajes. Se trata de recordar en el
+						momento correcto, mantener contacto con tutores y sostener el ritmo
+						de la agenda sin perseguir todo a mano.
+					</p>
+				</div>
+
+				<div>
+					<article>
+						<div
+							class="mt-12 flex flex-col items-center justify-center gap-5 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row md:px-16"
+						>
+							<div class="max-w-xl">
+								<h2
+									class="mb-6 text-3xl font-medium md:text-5xl md:font-semibold"
+								>
+									Envia recordatorios y notificaciones para citas, vacunas y controles
+								</h2>
+								<p class="text-md text-wofy-black md:text-lg">
+									Mantente cerca del tutor con mensajes utiles en momentos clave.
+									Asi es mas facil confirmar citas, recordar seguimientos y evitar
+									que la agenda se caiga por falta de comunicacion.
+								</p>
+							</div>
+							<div>
+								<Image
+									class="w-sm md:w-xl max-w-2xl"
+									src={marketingFeature}
+									alt="Modulo de recordatorios y notificaciones por WhatsApp para veterinarias en Wofy"
+								/>
+							</div>
+						</div>
+					</article>
+
+					<article>
+						<div
+							class="mt-12 flex flex-col items-center justify-center gap-5 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row-reverse md:px-16"
+						>
+							<div class="max-w-xl">
+								<h2
+									class="mb-6 text-3xl font-medium md:text-5xl md:font-semibold"
+								>
+									Abre conversacion y da seguimiento sin romper el flujo del equipo
+								</h2>
+								<p class="text-md text-wofy-black md:text-lg">
+									Cuando el contacto por WhatsApp esta mas ordenado, recepcion y
+									operacion responden mejor. Eso ayuda a mantener confirmaciones,
+									seguimiento y primera atencion con menos friccion.
+								</p>
+							</div>
+							<div>
+								<Image
+									class="w-xs md:w-lg max-w-2xl"
+									src={chatImage}
+									alt="Chat de Wofy para atencion y seguimiento por WhatsApp en clinicas veterinarias"
+								/>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="px-8 sm:px-20 mt-20 lg:mt-32">
+			<div class="mx-auto flex max-w-6xl flex-col items-center gap-10 lg:flex-row lg:gap-14">
+				<div class="max-w-2xl">
+					<h2 class="text-3xl font-semibold text-black md:text-5xl">
+						Los recordatorios tambien impactan el ritmo de toda la clinica
+					</h2>
+					<p class="mt-6 text-lg leading-8 text-wofy-black">
+						Cuando las confirmaciones salen a tiempo y el seguimiento no depende
+						de la memoria del equipo, la agenda se mueve con mas estabilidad.
+						Wofy conecta la comunicacion con el resto de la operacion diaria.
+					</p>
+					<ul class="mt-8 space-y-4">
+						{
+							operatingPoints.map((point) => (
+								<li class="flex gap-3 text-base leading-7 text-wofy-black md:text-lg">
+									<span class="mt-2 h-2.5 w-2.5 rounded-full bg-puerto-rico-500"></span>
+									<span>{point}</span>
+								</li>
+							))
+						}
+					</ul>
+					<a
+						href="https://wa.link/y8hfqg"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="mt-8 inline-block rounded-2xl bg-puerto-rico-500 px-6 py-4 text-base font-bold text-white transition duration-300 ease-in-out hover:bg-puerto-rico-700"
+					>
+						Hablar con Wofy
+					</a>
+				</div>
+
+				<div class="w-full max-w-3xl rounded-[2rem] border border-slate-200/70 bg-white p-4 shadow-xl md:p-6">
+					<Image
+						src={heroWofyDesktop}
+						alt="Vista de Wofy con agenda, historial y panel conectados a la comunicacion por WhatsApp"
+						class="h-auto w-full"
+					/>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
