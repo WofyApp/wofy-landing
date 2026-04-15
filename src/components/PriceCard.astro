@@ -1,0 +1,39 @@
+---
+const { class: className, planName, planPrice, planDescription, features } = Astro.props;
+---
+
+<article
+	class="w-full bg-white border border-slate-200 rounded-2xl p-8 flex flex-col items-center transition-transform hover:-translate-y-2 hover:shadow-xl max-w-sm"
+>
+	<div class="flex flex-col items-start mb-8 gap-10 w-full">
+		<div class="text-left flex flex-col gap-4">
+			<h2 class="text-2xl font-bold mb-2 text-wofy-black">{planName}</h2>
+			<div class="flex gap-2 items-center text-black">
+				<span class="text-5xl font-bold">${planPrice}</span><span class="text-sm"
+					>por mes</span
+				>
+			</div>
+			<p class="text-gray-600 text-start">
+				{planDescription}
+			</p>
+		</div>
+		<a
+			href="https://wa.link/y8hfqg"
+			target="_blank"
+			class="w-full block text-center bg-puerto-rico-600 text-white text-sm font-semibold py-3 px-10 rounded-2xl sm:text-sm hover:bg-puerto-rico-700 transition duration-300 ease-in-out"
+			aria-label="Ver cómo funciona Wofy"
+		>
+			Empieza ahora
+		</a>
+	</div>
+	<div class="flex flex-col items-start w-full">
+		<p class="text-gray-700 mb-6">Características incluidas:</p>
+		<ul class="mb-6 space-y-2 w-full">
+      {features.map((feature: string) => (
+        <li class="flex items-start gap-2">
+          <span class="text-[#1fcfc1]">✓</span><span>{feature}</span>
+        </li>
+      ))}
+		</ul>
+	</div>
+</article>
