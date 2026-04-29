@@ -2,43 +2,39 @@
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import marketingFeature from '../assets/marketing-feature.png';
+import marketingHero from '../assets/marketing-page-hero.png';
 import birthdayImage from '../assets/cumpleaños.png';
 import chatImage from '../assets/chat.png';
+import FeatureCTA from '../components/FeatureCTA.astro';
 
 const title =
-	'Marketing veterinario por WhatsApp | Segmentacion, retencion y campanas dirigidas | Wofy';
+	'Marketing veterinario por WhatsApp | Segmentación, retención y campañas dirigidas | Wofy';
 const description =
-	'Wofy ayuda a hacer marketing veterinario dirigido por WhatsApp con segmentacion de audiencias, mensajes personalizados, campanas de retencion, cumpleanos y reactivacion de clientes.';
+	'Wofy ayuda a hacer marketing veterinario dirigido por WhatsApp con segmentación de audiencias, mensajes personalizados, campañas de retención, cumpleaños y reactivación de clientes.';
 
 const quickWins = [
 	{
-		title: 'Segmentacion real',
+		title: 'Llega al cliente correcto',
 		description:
-			'Dirige mensajes por tipo de mascota, edad, raza u otras condiciones utiles para la clinica.',
+			'Envía mensajes según la mascota y su contexto. Empieza a generar respuestas reales con mensajes personalizados.'
 	},
 	{
-		title: 'Campanas por WhatsApp',
+		title: 'Más citas desde WhatsApp',
 		description:
-			'Lanza mensajes dirigidos sin tratar a todos los tutores como si fueran el mismo caso.',
+			'Convierte mensajes en citas sin esfuerzo. Tus clientes reciben lo que necesitan y agendan más fácil.'
 	},
 	{
-		title: 'Retencion y reactivacion',
+		title: 'Clientes que regresan',
 		description:
-			'Recupera clientes inactivos y mantente presente con comunicaciones mas oportunas.',
+			'Reactiva clientes inactivos y mantente presente con mensajes oportunos que los traen de vuelta.'
 	},
 	{
-		title: 'Cumpleanos y fechas clave',
+		title: 'Mensajes en el momento perfecto',
 		description:
-			'Activa acciones especiales en momentos que si ayudan a fortalecer la relacion con el tutor.',
-	},
+			'Vacunas, cumpleaños o controles. Contacta justo cuando importa y fortalece la relación con cada cliente.'
+	}
 ];
 
-const operatingPoints = [
-	'El marketing deja de ser masivo y empieza a responder a perfiles reales de tus pacientes.',
-	'WhatsApp sirve para vender mejor cuando la segmentacion y el mensaje tienen contexto.',
-	'Ayuda a retener clientes con campanas mas relevantes para cada audiencia.',
-	'El equipo puede mover acciones comerciales sin salir del flujo diario de la clinica.',
-];
 ---
 
 <Layout title={title} description={description}>
@@ -67,7 +63,7 @@ const operatingPoints = [
 								MARKETING
 							</span>
 							<span class="font-medium text-wofy-black">
-								Campanas dirigidas por WhatsApp
+								Marketing automático por WhatsApp
 							</span>
 						</span>
 					</a>
@@ -75,18 +71,18 @@ const operatingPoints = [
 					<h1
 						class="mx-auto mt-5 max-w-4xl text-balance text-4xl font-semibold tracking-tight text-black md:text-6xl"
 					>
-						El <span class="text-puerto-rico-600">marketing veterinario</span>
-						que usa WhatsApp para hablarle a la audiencia correcta.
+						Más citas. Más clientes que regresan.
+						<span class="text-puerto-rico-600"
+							>Automáticamente.</span
+						>
 					</h1>
 
 					<p
 						class="mx-auto mt-5 max-w-3xl text-pretty text-md leading-relaxed text-wofy-black md:text-lg"
 					>
-						Wofy ayuda a hacer marketing dirigido por WhatsApp para
-						veterinarias con segmentacion, mensajes personalizados y campanas
-						pensadas para retencion, reactivacion y fechas clave. Si hoy tu
-						clinica envia el mismo mensaje a todos, esta pagina esta hecha para
-						ese problema.
+						Envía mensajes por WhatsApp en el momento perfecto para
+						que tus clientes vuelvan, agenden y no olviden sus
+						citas.
 					</p>
 
 					<div class="mt-8 flex items-center justify-center gap-3">
@@ -96,25 +92,27 @@ const operatingPoints = [
 							rel="noopener noreferrer"
 							class="inline-block rounded-2xl bg-puerto-rico-500 px-5 py-3 text-sm font-bold text-white transition duration-300 ease-in-out hover:bg-puerto-rico-700 sm:px-10 sm:text-lg"
 						>
-							Quiero ver el marketing
+							Quiero más citas
 						</a>
 						<a
 							href="#modulos"
 							class="inline-block rounded-2xl border border-puerto-rico-500 bg-wofy-white px-3 py-3 text-sm font-bold text-puerto-rico-500 transition duration-300 ease-in-out hover:bg-puerto-rico-500 hover:text-wofy-white sm:px-8 sm:text-lg"
 						>
-							Ver como funciona
+							Ver cómo funciona
 						</a>
 					</div>
 
 					<p class="mt-5 text-xs text-slate-900/70 md:text-sm">
-						Mas precision • Mejor retencion • Menos mensajes genericos
+						Más citas • Mejor retención • Menos huecos en la agenda
 					</p>
 				</div>
 
-				<div class="relative mx-auto mt-12 max-w-5xl rounded-4xl border border-slate-200/70 bg-white p-4 shadow-xl md:p-6">
+				<div
+					class="relative mx-auto mt-12 max-w-5xl rounded-4xl border border-slate-200/70 bg-white p-4 shadow-xl md:p-6"
+				>
 					<Image
-						src={marketingFeature}
-						alt="Marketing dirigido por WhatsApp en Wofy con segmentacion de audiencias para clinicas veterinarias"
+						src={marketingHero}
+						alt="Marketing dirigido por WhatsApp en Wofy con segmentación de audiencias para clínicas veterinarias"
 						class="h-auto w-full"
 						loading="eager"
 						fetchpriority="high"
@@ -125,7 +123,9 @@ const operatingPoints = [
 					{
 						quickWins.map((item) => (
 							<article class="rounded-2xl border border-slate-200/70 bg-white p-6 shadow-sm">
-								<h2 class="text-xl font-semibold text-black">{item.title}</h2>
+								<h2 class="text-xl font-semibold text-black">
+									{item.title}
+								</h2>
 								<p class="mt-3 text-sm leading-7 text-wofy-black md:text-base">
 									{item.description}
 								</p>
@@ -150,39 +150,43 @@ const operatingPoints = [
 					</div>
 					<h2 class="mx-auto mt-8 max-w-4xl">
 						<span class="text-3xl font-semibold md:text-5xl">
-							WhatsApp funciona mejor cuando el marketing tiene direccion
+							WhatsApp funciona mejor cuando te genera citas, no
+							solo mensajes
 						</span>
 					</h2>
 					<p class="mx-auto mt-8 max-w-2xl text-lg text-wofy-black">
-						No se trata solo de mandar mensajes. Se trata de segmentar, elegir
-						el momento correcto y construir campanas que si tengan sentido para
-						la mascota y su tutor.
+						No se trata de enviar mensajes masivos. Se trata de
+						hablarle al cliente correcto en el momento exacto para
+						que vuelva a tu veterinaria.
 					</p>
 				</div>
 
 				<div>
 					<article>
 						<div
-							class="mt-12 flex flex-col items-center justify-center gap-5 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row md:px-16"
+							class="mt-12 flex flex-col items-center justify-center gap-16 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row md:px-16"
 						>
-							<div class="max-w-xl">
+							<div class="max-w-sm">
 								<h2
-									class="mb-6 text-3xl font-medium md:text-5xl md:font-semibold"
+									class="mb-6 text-2xl font-semibold md:text-4xl"
 								>
-									Segmenta y dirige campanas por WhatsApp segun tu audiencia
+									Habla con el cliente correcto y deja de
+									perder mensajes
 								</h2>
 								<p class="text-md text-wofy-black md:text-lg">
-									Elige mejor a quien hablarle y por que. Asi puedes hacer
-									marketing veterinario mas preciso con mensajes dirigidos por
-									tipo de mascota, edad, raza o cualquier criterio que haga sentido
-									para la clinica.
+									Envía campañas según la mascota, su
+									historial o el tipo de cliente. Deja de
+									tratar a todos los tutores igual y empieza a
+									hablarle a cada uno como corresponde. Cuando
+									el mensaje tiene contexto, la diferencia se
+									nota. Y las respuestas llegan.
 								</p>
 							</div>
 							<div>
 								<Image
 									class="w-sm md:w-xl max-w-2xl"
 									src={marketingFeature}
-									alt="Segmentacion de audiencias para marketing veterinario por WhatsApp en Wofy"
+									alt="Segmentación de audiencias para marketing veterinario por WhatsApp en Wofy"
 								/>
 							</div>
 						</div>
@@ -190,26 +194,29 @@ const operatingPoints = [
 
 					<article>
 						<div
-							class="mt-12 flex flex-col items-center justify-center gap-5 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row-reverse md:px-16"
+							class="mt-12 flex flex-col items-center justify-center gap-16 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row-reverse md:px-16"
 						>
-							<div class="max-w-xl">
+							<div class="max-w-sm">
 								<h2
-									class="mb-6 text-3xl font-medium md:text-5xl md:font-semibold"
+									class="mb-6 text-2xl font-semibold md:text-4xl"
 								>
-									Activa retencion con cumpleanos, fechas especiales y reactivacion
+									Haz que tus clientes vuelvan sin tener que
+									perseguirlos
 								</h2>
 								<p class="text-md text-wofy-black md:text-lg">
-									No todo el valor esta en la siguiente cita. Tambien esta en
-									recordar cumpleanos, recuperar clientes que se enfriaron y
-									mantener la relacion con detalles que hacen que tu clinica siga
-									presente.
+									Cumpleaños, vacunas o seguimientos.
+									Aprovecha los momentos clave para contactar
+									a cada cliente con mensajes que sí tienen
+									sentido. Así tu clínica se mantiene presente
+									sin ser invasiva, y es más probable que el
+									cliente vuelva cuando lo necesita.
 								</p>
 							</div>
 							<div>
 								<Image
 									class="w-xs md:w-lg max-w-2xl"
 									src={birthdayImage}
-									alt="Modulo de retencion con cumpleanos del mes para marketing veterinario en Wofy"
+									alt="Módulo de retención con cumpleaños del mes para marketing veterinario en Wofy"
 								/>
 							</div>
 						</div>
@@ -217,25 +224,25 @@ const operatingPoints = [
 
 					<article>
 						<div
-							class="mt-12 flex flex-col items-center justify-center gap-5 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row md:px-16"
+							class="mt-12 flex flex-col items-center justify-center gap-16 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row md:px-16"
 						>
-							<div class="max-w-xl">
+							<div class="max-w-sm">
 								<h2
-									class="mb-6 text-3xl font-medium md:text-5xl md:font-semibold"
+									class="mb-6 text-2xl font-semibold md:text-4xl"
 								>
-									Convierte WhatsApp en un canal comercial mas claro para tu equipo
+									Convierte conversaciones en citas reales
 								</h2>
 								<p class="text-md text-wofy-black md:text-lg">
-									Cuando el marketing dirigido vive dentro del flujo de la
-									clinica, es mas facil sostener conversaciones, medir respuesta y
-									mover acciones comerciales sin perder orden operativo.
+									Tu equipo no solo responde mensajes. Ahora
+									puede mover clientes, cerrar citas y generar
+									ingresos desde WhatsApp.
 								</p>
 							</div>
 							<div>
 								<Image
 									class="w-xs md:w-lg max-w-2xl"
 									src={chatImage}
-									alt="Conversacion de WhatsApp usada como canal de marketing veterinario en Wofy"
+									alt="Conversación de WhatsApp usada como canal de marketing veterinario en Wofy"
 								/>
 							</div>
 						</div>
@@ -243,37 +250,8 @@ const operatingPoints = [
 				</div>
 			</div>
 		</section>
-
-		<section class="px-8 sm:px-20 mt-20 lg:mt-32">
-			<div class="mx-auto max-w-6xl rounded-4xl border border-slate-200/70 bg-white p-8 shadow-xl md:p-12">
-				<h2 class="max-w-3xl text-3xl font-semibold text-black md:text-5xl">
-					El marketing dirigido por WhatsApp tambien mejora como crece la clinica
-				</h2>
-				<p class="mt-6 max-w-3xl text-lg leading-8 text-wofy-black">
-					Cuando tus campanas llegan a la audiencia correcta, no dependes solo
-					de mensajes genricos ni de promociones para todos. Wofy ayuda a que
-					WhatsApp se use con mas criterio comercial y mas cercania con el
-					tutor.
-				</p>
-				<ul class="mt-8 space-y-4">
-					{
-						operatingPoints.map((point) => (
-							<li class="flex gap-3 text-base leading-7 text-wofy-black md:text-lg">
-								<span class="mt-2 h-2.5 w-2.5 rounded-full bg-puerto-rico-500"></span>
-								<span>{point}</span>
-							</li>
-						))
-					}
-				</ul>
-				<a
-					href="https://wa.link/y8hfqg"
-					target="_blank"
-					rel="noopener noreferrer"
-					class="mt-8 inline-block rounded-2xl bg-puerto-rico-500 px-6 py-4 text-base font-bold text-white transition duration-300 ease-in-out hover:bg-puerto-rico-700"
-				>
-					Hablar con Wofy
-				</a>
-			</div>
-		</section>
+		<FeatureCTA
+			header="Transforma la forma en que llegas a tus clientes. Crece más."
+		/>
 	</main>
 </Layout>
