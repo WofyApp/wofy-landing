@@ -1,91 +1,140 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import PriceCard from '../components/PriceCard.astro';
+import FAQSection from '../components/FAQSection.astro';
+
+const faqs = [
+	{
+		question: '¿Qué hace diferente a Wofy frente a otras herramientas?',
+		answer:
+			'Wofy une agenda veterinaria, historial clinico y marketing por WhatsApp en una sola experiencia. Eso evita trabajar con procesos partidos y herramientas desconectadas.'
+	},
+	{
+		question: '¿Por qué Wofy ofrece un plan Starter gratis?',
+		answer:
+			'Porque queremos que mas veterinarias puedan crecer con tecnologia util desde el inicio. El plan Starter esta pensado para apoyar a clinicas en etapas tempranas, para que se enfoquen en los animales y su atencion sin sentir que el software les pone barreras. A medida que la veterinaria madura, puede seguir creciendo con herramientas que si le aportan valor de acuerdo con su etapa.'
+	},
+	{
+		question: '¿Wofy sirve solo para agendar citas?',
+		answer:
+			'No. Tambien ayuda a gestionar historias clinicas, recordatorios, seguimiento a clientes y acciones de marketing para retencion y reactivacion.'
+	},
+	{
+		question: '¿Por qué Wofy pone a WhatsApp en el centro?',
+		answer:
+			'Porque para muchas veterinarias WhatsApp ya es el canal principal de contacto con los tutores. Integrarlo bien mejora la operacion y la experiencia del cliente.'
+	}
+];
+
+const structuredData = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((item) => ({
+		'@type': 'Question',
+		name: item.question,
+		acceptedAnswer: {
+			'@type': 'Answer',
+			text: item.answer
+		}
+	}))
+};
 ---
 
 <Layout
 	title="Compara planes y comienza gratis para tu veterinaria | Wofy"
 	description="Elige el plan de Wofy que se adapta a las necesidades de tu clínica veterinaria, desde la organización básica hasta la automatización avanzada y el crecimiento personalizado."
+	structuredData={structuredData}
 >
-	<section class="px-8 sm:px-20 mt-20 mb-24">
-		<h1
-			id="pricing-title"
-			class="text-center mx-auto max-w-3xl text-balance text-5xl font-semibold tracking-tight text-black md:text-7xl"
-		>
-			Elige tu plan. <br /><span class="text-puerto-rico-600">Escala</span
-			> tu veterinaria.
-		</h1>
-		<p
-			class="text-center mx-auto mt-7 max-w-2xl text-pretty text-md leading-relaxed text-muted md:text-[20px]"
-		>
-			Precios claros para cada etapa de tu veterinaria
-		</p>
-		<p
-			class="text-center text-puerto-rico-600 font-semibold mx-auto mt-2 max-w-2xl text-pretty text-sm leading-relaxed text-muted md:text-[17px]"
-		>
-			Inicia gratis ahora mismo, sin tarjeta de crédito, y actualiza cuando quieras.
-		</p>
-		<div
-			class="mt-24 flex flex-col md:flex-row items-stretch justify-center gap-8"
-		>
-			<!-- Card 1: Starter -->
-			<PriceCard
-				planName="Starter"
-				planPrice="0"
-				planDescription="Organiza tu veterinaria con lo esencial y sin costos iniciales."
-				features={[
-					'Hasta 3 usuarios',
-					'Agenda y calendario',
-					'Historial clínico digital',
-					'Gestión de clientes y mascotas',
-					'Reportes básicos',
-					'Una sucursal'
-				]}
-			/>
+	<main>
+		<section class="px-8 sm:px-20 mt-20 mb-24">
+			<h1
+				id="pricing-title"
+				class="text-center mx-auto max-w-3xl text-balance text-5xl font-semibold tracking-tight text-black md:text-7xl"
+			>
+				Elige tu plan. <br /><span class="text-puerto-rico-600">Escala</span
+				> tu veterinaria.
+			</h1>
+			<p
+				class="text-center mx-auto mt-7 max-w-2xl text-pretty text-md leading-relaxed text-muted md:text-[20px]"
+			>
+				Precios claros para cada etapa de tu veterinaria
+			</p>
+			<p
+				class="text-center text-puerto-rico-600 font-semibold mx-auto mt-2 max-w-2xl text-pretty text-sm leading-relaxed text-muted md:text-[17px]"
+			>
+				Inicia gratis ahora mismo, sin tarjeta de crédito, y actualiza cuando quieras.
+			</p>
+			<div
+				class="mt-24 flex flex-col md:flex-row items-stretch justify-center gap-8"
+			>
+				<!-- Card 1: Starter -->
+				<PriceCard
+					planName="Starter"
+					planPrice="0"
+					planDescription="Organiza tu veterinaria con lo esencial y sin costos iniciales."
+					features={[
+						'Hasta 3 usuarios',
+						'Agenda y calendario',
+						'Historial clínico digital',
+						'Gestión de clientes y mascotas',
+						'Reportes básicos',
+						'Una sucursal'
+					]}
+				/>
 
-			<!-- Card 2: Scale -->
-			<PriceCard
-				planName="Scale"
-				planPrice="99.000"
-				planDescription="Automatiza y haz crecer tu clínica veterinaria."
-				features={[
-					'Usuarios ilimitados',
-					'Agenda y calendario',
-					'Historial clínico digital',
-					'Gestión de clientes y mascotas',
-					'Reportes avanzados',
-					'Hasta 2 sucursales',
-					'Recordatorios por WhatsApp',
-					'Consentimientos digitales',
-					'Soporte prioritario',
-					'Wofy Bot con hasta 1000 mensajes incluidos'
-				]}
-			/>
+				<!-- Card 2: Scale -->
+				<PriceCard
+					planName="Plus"
+					planPrice="99.000"
+					featured={true}
+					badgeText="Recomendado"
+					planDescription="Automatiza y haz crecer tu clínica veterinaria."
+					features={[
+						'Usuarios ilimitados',
+						'Agenda y calendario',
+						'Historial clínico digital',
+						'Gestión de clientes y mascotas',
+						'Reportes avanzados',
+						'Hasta 2 sucursales',
+						'Recordatorios por WhatsApp',
+						'Consentimientos digitales',
+						'Soporte prioritario',
+						'Wofy Bot con hasta 1000 mensajes incluidos'
+					]}
+				/>
 
-			<!-- Card 3: Pro -->
+				<!-- Card 3: Pro -->
 
-			<PriceCard
-				planName="Pro"
-				planPrice="160.000"
-				planDescription="Soluciones profesionales y soporte personalizado para clínicas en expansión."
-				features={[
-					'Usuarios ilimitados',
-					'Agenda y calendario',
-					'Historial clínico digital',
-					'Gestión de clientes y mascotas',
-					'Reportes personalizados',
-					'Sucursales ilimitadas',
-					'Hasta 5 campañas de marketing inteligente',
-					'Wofy Bot con hasta 5000 mensajes incluidos',
-					'Modulo de fidelización',
-					'Modulo de inventario',
-					'Personalización de servicios',
-					'Recordatorios por WhatsApp',
-					'Consentimientos digitales',
-					'Soporte personalizado 24/7',
-					'Automatizaciones avanzadas'
-				]}
-			/>
-		</div>
-	</section>
+				<PriceCard
+					planName="Pro"
+					planPrice="160.000"
+					planDescription="Soluciones profesionales y soporte personalizado para clínicas en expansión."
+					features={[
+						'Usuarios ilimitados',
+						'Agenda y calendario',
+						'Historial clínico digital',
+						'Gestión de clientes y mascotas',
+						'Reportes personalizados',
+						'Sucursales ilimitadas',
+						'Hasta 5 campañas de marketing inteligente',
+						'Wofy Bot con hasta 5000 mensajes incluidos',
+						'Modulo de fidelización',
+						'Modulo de inventario',
+						'Personalización de servicios',
+						'Recordatorios por WhatsApp',
+						'Consentimientos digitales',
+						'Soporte personalizado 24/7',
+						'Automatizaciones avanzadas'
+					]}
+				/>
+			</div>
+		</section>
+
+		<FAQSection
+			title="Preguntas frecuentes"
+			description="Todo lo que necesitas saber sobre los planes de Wofy, el plan Starter y como acompanamos el crecimiento de tu veterinaria."
+			items={faqs}
+			className="px-4 pb-16 sm:px-6 lg:px-8"
+		/>
+	</main>
 </Layout>
