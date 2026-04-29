@@ -1,46 +1,38 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import FeatureCTA from '../components/FeatureCTA.astro';
 import { Image } from 'astro:assets';
-import heroWofyDesktop from '../assets/hero-image-desktop.png';
-import heroWofyMobile from '../assets/hero-image-mobile.png';
-import agendaFeature from '../assets/agenda-feature.png';
-import serviceVet from '../assets/agenda-feature.png';
-import dashboardImage from '../assets/dashboard.png';
+import agendaHero from '../assets/agenda-page-hero.png';
+import agendaFeatures1 from '../assets/agenda-features-1.png';
+import agendaFeatures2 from '../assets/agenda-features-2.png';
 
-const title =
-	'Agenda veterinaria para clinicas modernas | Citas, recordatorios y seguimiento | Wofy';
+const title = 'Agenda veterinaria online con WhatsApp | Wofy';
 const description =
-	'Wofy ayuda a organizar tu agenda veterinaria con gestion de citas, seguimientos, recordatorios por WhatsApp y una vista mas clara del dia a dia de la clinica.';
+	'Gestiona citas, envía recordatorios y automatiza tu veterinaria con Wofy. Agenda inteligente conectada a WhatsApp.';
 
 const quickWins = [
 	{
-		title: 'Citas mas ordenadas',
+		title: 'Citas más ordenadas. Control total',
 		description:
-			'Consulta el dia con mas claridad y evita cruces o olvidos en la operacion.',
+			'Visualiza todas las citas de la clínica en un solo lugar y de forma clara. Olvídate de perder información valiosa.'
 	},
 	{
-		title: 'Seguimiento del dia',
+		title: 'Seguimiento del día a tu ritmo',
 		description:
-			'Revisa atendidas, pendientes y por atender desde una misma agenda veterinaria.',
+			'Revisa las citas atendidas, pendientes y por atender desde una misma agenda veterinaria. Nunca más sorpresas a última hora.'
 	},
 	{
 		title: 'Recordatorios por WhatsApp',
 		description:
-			'Confirma citas y acompana a los tutores con mensajes en momentos clave.',
+			'Confirma las citas, reduce ausencias y mantente en contacto con tus clientes sin esfuerzo.'
 	},
 	{
-		title: 'Equipo mejor coordinado',
+		title: 'Menos tiempo respondiendo chats',
 		description:
-			'Todos trabajan sobre la misma vista para mover la agenda con menos friccion.',
-	},
+			'Con un Chatbot 24/7 que agenda por ti, te enfocas en lo importante: atender a tus pacientes.'
+	}
 ];
 
-const operatingPoints = [
-	'Organiza la carga del dia sin depender de chats o notas sueltas.',
-	'Identifica pendientes y seguimientos antes de que afecten la atencion.',
-	'Da mas visibilidad a la recepcion y al equipo clinico sobre lo que viene.',
-	'Conecta la agenda con el resto de la operacion de la clinica.',
-];
 ---
 
 <Layout title={title} description={description}>
@@ -77,17 +69,17 @@ const operatingPoints = [
 					<h1
 						class="mx-auto mt-5 max-w-4xl text-balance text-4xl font-semibold tracking-tight text-black md:text-6xl"
 					>
-						La <span class="text-puerto-rico-600">agenda veterinaria</span>
-						para clinicas que quieren atender con mas orden y menos cruces.
+						Tu <span class="text-puerto-rico-600"
+							>agenda veterinaria</span
+						>
+						automatizada por WhatsApp
 					</h1>
 
 					<p
 						class="mx-auto mt-5 max-w-3xl text-pretty text-md leading-relaxed text-wofy-black md:text-lg"
 					>
-						Wofy ayuda a gestionar citas, seguimientos y recordatorios desde una
-						vista mas clara para recepcion y equipo clinico. Si hoy tu agenda se
-						divide entre WhatsApp, notas y memoria, esta pagina esta hecha para
-						ese problema.
+						Olvídate del desorden, las citas perdidas y los mensajes
+						manuales. Wofy agenda, recuerda y organiza todo por ti.
 					</p>
 
 					<div class="mt-8 flex items-center justify-center gap-3">
@@ -103,21 +95,21 @@ const operatingPoints = [
 							href="#modulos"
 							class="inline-block rounded-2xl border border-puerto-rico-500 bg-wofy-white px-3 py-3 text-sm font-bold text-puerto-rico-500 transition duration-300 ease-in-out hover:bg-puerto-rico-500 hover:text-wofy-white sm:px-8 sm:text-lg"
 						>
-							Ver como funciona
+							Ver cómo funciona
 						</a>
 					</div>
 
 					<p class="mt-5 text-xs text-slate-900/70 md:text-sm">
-						Agenda clara • Recordatorios utiles • Menos carga manual para el
-						equipo
+						Agenda clara • Recordatorios útiles • Menos carga manual
+						para el equipo
 					</p>
 				</div>
 
 				<div class="relative mx-auto mt-12 max-w-7xl">
 					<div class="md:hidden">
 						<Image
-							src={heroWofyMobile}
-							alt="Vista movil de Wofy con agenda veterinaria y recordatorios"
+							src={agendaHero}
+							alt="Vista móvil de Wofy con agenda veterinaria y recordatorios"
 							class="h-auto w-full"
 							loading="eager"
 							fetchpriority="high"
@@ -125,8 +117,8 @@ const operatingPoints = [
 					</div>
 					<div class="hidden md:block">
 						<Image
-							src={heroWofyDesktop}
-							alt="Vista de Wofy con agenda veterinaria, historial clinico y panel de negocio"
+							src={agendaHero}
+							alt="Vista de Wofy con agenda veterinaria, historial clínico y panel de negocio"
 							class="h-auto w-full"
 							loading="eager"
 							fetchpriority="high"
@@ -138,7 +130,9 @@ const operatingPoints = [
 					{
 						quickWins.map((item) => (
 							<article class="rounded-2xl border border-slate-200/70 bg-white p-6 shadow-sm">
-								<h2 class="text-xl font-semibold text-black">{item.title}</h2>
+								<h2 class="text-xl font-semibold text-black">
+									{item.title}
+								</h2>
 								<p class="mt-3 text-sm leading-7 text-wofy-black md:text-base">
 									{item.description}
 								</p>
@@ -157,44 +151,49 @@ const operatingPoints = [
 							class="flex items-center gap-2 rounded-full bg-puerto-rico-600 px-5 py-2 text-xs"
 						>
 							<span class="text-sm font-medium text-wofy-white">
-								Lo que necesitas para el dia a dia
+								Lo que necesitas para el día a día
 							</span>
 						</span>
 					</div>
 					<h2 class="mx-auto mt-8 max-w-4xl">
 						<span class="text-3xl font-semibold md:text-5xl">
-							Una agenda de citas veterinarias que si ayuda a operar mejor
+							Una agenda de citas veterinarias que sí ayuda a
+							operar mejor
 						</span>
 					</h2>
 					<p class="mx-auto mt-8 max-w-2xl text-lg text-wofy-black">
-						No es solo poner horas en un calendario. La agenda veterinaria tiene
-						que mostrar el estado de cada cita, ayudar con seguimientos y
-						darle visibilidad al equipo para atender con menos ruido.
+						No es solo poner horas en un calendario. La agenda
+						veterinaria tiene que mostrar el estado de cada cita,
+						ayudar con seguimientos y darle visibilidad al equipo
+						para atender con menos ruido.
 					</p>
 				</div>
 
 				<div>
 					<article>
 						<div
-							class="mt-12 flex flex-col items-center justify-center gap-5 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row md:px-16"
+							class="mt-12 flex flex-col items-center justify-center gap-16 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row md:px-16"
 						>
-							<div class="max-w-xl">
+							<div class="max-w-sm">
 								<h2
-									class="mb-6 text-3xl font-medium md:text-5xl md:font-semibold"
+									class="mb-6 text-2xl font-semibold md:text-4xl"
 								>
-									Ve el dia con citas, horarios y seguimientos en una sola vista
+									Ve el día con citas, horarios y calendario
+									en un mismo lugar
 								</h2>
 								<p class="text-md text-wofy-black md:text-lg">
-									Organiza la jornada sin tener que reconstruir todo desde chats,
-									llamadas o recordatorios manuales. La agenda te deja ver lo que
-									esta confirmado, lo que sigue y lo que necesita atencion.
+									Organiza la jornada sin tener que
+									reconstruir todo desde chats, llamadas o
+									recordatorios manuales. La agenda te deja
+									ver lo que está confirmado, lo que sigue y
+									lo que necesita atención.
 								</p>
 							</div>
 							<div>
 								<Image
-									class="w-xs md:w-xl max-w-2xl"
-									src={agendaFeature}
-									alt="Agenda veterinaria de Wofy con calendario, citas y estados de atencion"
+									class="md:w-lg w-sm"
+									src={agendaFeatures1}
+									alt="Agenda veterinaria de Wofy con calendario, citas y estados de atención"
 								/>
 							</div>
 						</div>
@@ -202,25 +201,28 @@ const operatingPoints = [
 
 					<article>
 						<div
-							class="mt-12 flex flex-col items-center justify-center gap-5 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row-reverse md:px-16"
+							class="mt-12 flex flex-col items-center justify-center gap-16 rounded-2xl border border-slate-200/70 bg-puerto-rico-100/30 px-6 py-10 md:flex-row-reverse md:px-16"
 						>
-							<div class="max-w-xl">
+							<div class="max-w-sm">
 								<h2
-									class="mb-6 text-3xl font-medium md:text-5xl md:font-semibold"
+									class="mb-6 text-2xl font-semibold md:text-4xl"
 								>
-									Gestiona citas con recordatorios y acciones desde el mismo flujo
+									Mantén el control con información dinámica
+									sobre cada cita
 								</h2>
 								<p class="text-md text-wofy-black md:text-lg">
-									Cuando la agenda y los recordatorios viven juntos, el equipo
-									pierde menos tiempo persiguiendo pendientes. Eso ayuda a reducir
-									ausencias y a mover la operacion con mas tranquilidad.
+									No es solo saber que hay una cita a las 3 p. m.
+									La agenda te muestra el estado de cada cita,
+									te ayuda a hacer seguimientos y le da
+									visibilidad al equipo para que todos sepan
+									que viene, que pasó y que sigue.
 								</p>
 							</div>
 							<div>
 								<Image
-									class="w-xs md:w-xl max-w-2xl"
-									src={serviceVet}
-									alt="Modulo de gestion de citas veterinarias con acciones y recordatorios en Wofy"
+									class="max-w-md"
+									src={agendaFeatures2}
+									alt="Módulo de gestión de citas veterinarias con acciones y recordatorios en Wofy"
 								/>
 							</div>
 						</div>
@@ -228,47 +230,6 @@ const operatingPoints = [
 				</div>
 			</div>
 		</section>
-
-		<section class="px-8 sm:px-20 mt-20 lg:mt-32">
-			<div class="mx-auto flex max-w-6xl flex-col items-center gap-10 lg:flex-row lg:gap-14">
-				<div class="max-w-2xl">
-					<h2 class="text-3xl font-semibold text-black md:text-5xl">
-						Una buena agenda veterinaria tambien mejora el ritmo de toda la
-						clinica
-					</h2>
-					<p class="mt-6 text-lg leading-8 text-wofy-black">
-						Cuando el equipo sabe que viene, que ya paso y que sigue, trabaja con
-						mas control. Wofy conecta la agenda con el movimiento general de la
-						clinica para que recepcion y operacion no trabajen a ciegas.
-					</p>
-					<ul class="mt-8 space-y-4">
-						{
-							operatingPoints.map((point) => (
-								<li class="flex gap-3 text-base leading-7 text-wofy-black md:text-lg">
-									<span class="mt-2 h-2.5 w-2.5 rounded-full bg-puerto-rico-500"></span>
-									<span>{point}</span>
-								</li>
-							))
-						}
-					</ul>
-					<a
-						href="https://wa.link/y8hfqg"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="mt-8 inline-block rounded-2xl bg-puerto-rico-500 px-6 py-4 text-base font-bold text-white transition duration-300 ease-in-out hover:bg-puerto-rico-700"
-					>
-						Hablar con Wofy
-					</a>
-				</div>
-
-				<div class="w-full max-w-3xl rounded-4xl border border-slate-200/70 bg-white p-4 shadow-xl md:p-6">
-					<Image
-						src={dashboardImage}
-						alt="Panel de Wofy con citas, ingresos y movimiento general de la clinica"
-						class="h-auto w-full"
-					/>
-				</div>
-			</div>
-		</section>
+		<FeatureCTA header="Menos llamadas. Más citas. Más mascotas felices." />
 	</main>
 </Layout>

@@ -1,0 +1,305 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FeatureCTA from '../components/FeatureCTA.astro';
+import FAQSection from '../components/FAQSection.astro';
+import { Image } from 'astro:assets';
+import dashboardImage from '../assets/dashboard.png';
+
+const title =
+	'Por que Wofy | Software veterinario con WhatsApp para hacer crecer tu clinica';
+const description =
+	'Conoce por que Wofy ayuda a veterinarias a ordenar su operacion, mejorar la atencion y crecer con agenda, historial clinico y marketing por WhatsApp.';
+
+const reasons = [
+	{
+		title: 'Creado para veterinarias',
+		description:
+			'Wofy nace pensando en la realidad de una clinica veterinaria: citas, pacientes, tutores, seguimientos y procesos que no pueden depender del caos.'
+	},
+	{
+		title: 'WhatsApp como canal real de trabajo',
+		description:
+			'No tratamos WhatsApp como un extra. Lo conectamos con tu agenda, tus recordatorios y tu relacion con cada cliente para que el equipo trabaje mejor.'
+	},
+	{
+		title: 'Operacion mas clara para todo el equipo',
+		description:
+			'Recepcion, medicos y administracion necesitan visibilidad. Wofy centraliza la informacion para reducir friccion y mejorar la coordinacion diaria.'
+	},
+	{
+		title: 'Pensado para crecer contigo',
+		description:
+			'Desde ordenar citas hasta mejorar retencion, Wofy acompana el crecimiento de la veterinaria sin sumar complejidad innecesaria.'
+	}
+];
+
+const pillars = [
+	{
+		title: 'Menos tareas manuales, mas tiempo para atender',
+		description:
+			'Automatizamos procesos repetitivos para que el equipo pase menos tiempo persiguiendo chats, confirmando citas o buscando informacion dispersa.'
+	},
+	{
+		title: 'Mejor experiencia para el cliente',
+		description:
+			'Cuando una veterinaria responde mejor, recuerda a tiempo y hace seguimiento con contexto, la experiencia del tutor cambia por completo.'
+	},
+	{
+		title: 'Decisiones con una operacion mas visible',
+		description:
+			'Wofy ayuda a entender que esta pasando en la agenda, en el historial y en la relacion con los clientes para operar con mas criterio.'
+	}
+];
+
+const faqs = [
+	{
+		question: '¿Qué hace diferente a Wofy frente a otras herramientas?',
+		answer: 'Wofy une agenda veterinaria, historial clinico y marketing por WhatsApp en una sola experiencia. Eso evita trabajar con procesos partidos y herramientas desconectadas.'
+	},
+	{
+		question: '¿Por qué Wofy ofrece un plan Starter gratis?',
+		answer: 'Porque queremos que mas veterinarias puedan crecer con tecnologia util desde el inicio. El plan Starter esta pensado para apoyar a clinicas en etapas tempranas, para que se enfoquen en los animales y su atencion sin sentir que el software les pone barreras. A medida que la veterinaria madura, puede seguir creciendo con herramientas que si le aportan valor de acuerdo con su etapa.'
+	},
+	{
+		question: '¿Wofy sirve solo para agendar citas?',
+		answer: 'No. Tambien ayuda a gestionar historias clinicas, recordatorios, seguimiento a clientes y acciones de marketing para retencion y reactivacion.'
+	},
+	{
+		question: '¿Por qué Wofy pone a WhatsApp en el centro?',
+		answer: 'Porque para muchas veterinarias WhatsApp ya es el canal principal de contacto con los tutores. Integrarlo bien mejora la operacion y la experiencia del cliente.'
+	}
+];
+
+const structuredData = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'WebPage',
+		name: title,
+		description,
+		url: 'https://wofy.app/nosotros'
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'FAQPage',
+		mainEntity: faqs.map((item) => ({
+			'@type': 'Question',
+			name: item.question,
+			acceptedAnswer: {
+				'@type': 'Answer',
+				text: item.answer
+			}
+		}))
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{
+				'@type': 'ListItem',
+				position: 1,
+				name: 'Inicio',
+				item: 'https://wofy.app/'
+			},
+			{
+				'@type': 'ListItem',
+				position: 2,
+				name: 'Nosotros',
+				item: 'https://wofy.app/nosotros'
+			}
+		]
+	}
+];
+---
+
+<Layout title={title} description={description} structuredData={structuredData}>
+	<main>
+		<section class="mt-4 px-8 sm:px-20 md:mt-10">
+			<div class="mx-auto max-w-6xl px-6 pb-14 pt-2 md:pb-20">
+				<div class="text-center">
+					<a
+						href="#por-que-wofy"
+						class="relative inline-flex rounded-full bg-[linear-gradient(90deg,#44cac0,#7ef0e6,#44cac0)] p-px shadow-[0_0_20px_rgba(68,202,192,0.25)] transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_0_30px_rgba(68,202,192,0.4)] focus:outline-none focus:ring-2 focus:ring-[#44cac0]/40"
+					>
+						<span
+							class="flex items-center gap-2 rounded-full bg-white px-4 py-1 text-xs shadow-sm"
+						>
+							<span
+								class="rounded-full bg-[#ff1fa9]/10 px-2 py-0.5 font-semibold tracking-wide text-[#ff1fa9]"
+							>
+								NOSOTROS
+							</span>
+							<span class="font-medium text-wofy-black">
+								Por que existe Wofy
+							</span>
+						</span>
+					</a>
+
+					<h1
+						class="mx-auto mt-5 max-w-4xl text-balance text-4xl font-semibold tracking-tight text-black md:text-6xl"
+					>
+						Tu veterinaria funciona mejor con
+						<span class="text-puerto-rico-600"> Wofy</span>
+					</h1>
+
+					<p
+						class="mx-auto mt-5 max-w-3xl text-pretty text-md leading-relaxed text-wofy-black md:text-lg"
+					>
+						Creamos Wofy porque creemos que la inteligencia
+						artificial puede cambiar por completo la forma en que
+						funciona una veterinaria. Queremos quitarle peso al
+						trabajo repetitivo, devolverle tiempo al equipo y ayudar
+						a construir clinicas mas agiles, mas inteligentes y mas
+						humanas.
+					</p>
+
+					<div class="mt-8 flex items-center justify-center gap-3">
+						<a
+							href="https://wa.link/y8hfqg"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="inline-block rounded-2xl bg-puerto-rico-500 px-5 py-3 text-sm font-bold text-white transition duration-300 ease-in-out hover:bg-puerto-rico-700 sm:px-10 sm:text-lg"
+						>
+							Iniciar con Wofy gratis
+						</a>
+						<a
+							href="/pricing"
+							class="inline-block rounded-2xl border border-puerto-rico-500 bg-wofy-white px-3 py-3 text-sm font-bold text-puerto-rico-500 transition duration-300 ease-in-out hover:bg-puerto-rico-500 hover:text-wofy-white sm:px-8 sm:text-lg"
+						>
+							Ver planes
+						</a>
+					</div>
+
+					<p class="mt-5 text-xs text-slate-900/70 md:text-sm">
+						Software veterinario • WhatsApp integrado • Operacion
+						mas clara
+					</p>
+				</div>
+
+				<div
+					class="relative mx-auto mt-12 max-w-6xl rounded-4xl border border-slate-200/70 bg-white p-4 shadow-xl md:p-6"
+				>
+					<Image
+						src={dashboardImage}
+						alt="Panel de Wofy con herramientas para agenda, seguimiento y operacion veterinaria"
+						class="h-auto w-full"
+						loading="eager"
+						fetchpriority="high"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<section id="por-que-wofy" class="bg-puerto-rico-50/80">
+			<div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+				<div class="text-center">
+					<div class="relative inline-flex rounded-full p-px">
+						<span
+							class="flex items-center gap-2 rounded-full bg-puerto-rico-600 px-5 py-2 text-xs"
+						>
+							<span class="text-sm font-medium text-wofy-white">
+								Nuestra forma de pensar el producto
+							</span>
+						</span>
+					</div>
+					<h2
+						class="mx-auto mt-8 max-w-4xl text-3xl font-semibold md:text-5xl"
+					>
+						Por que Wofy importa en el dia a dia de una veterinaria
+					</h2>
+					<p class="mx-auto mt-8 max-w-2xl text-lg text-wofy-black">
+						Creemos que una buena herramienta no solo guarda datos.
+						Tambien reduce desgaste operativo, mejora el servicio y
+						le da al equipo una forma mas simple de trabajar.
+					</p>
+				</div>
+
+				<div class="mt-12 grid gap-6 lg:grid-cols-3">
+					{
+						pillars.map((item) => (
+							<article class="rounded-3xl border border-slate-200/70 bg-white p-8 shadow-sm">
+								<h3 class="text-2xl font-semibold text-black">
+									{item.title}
+								</h3>
+								<p class="mt-4 text-base leading-7 text-wofy-black">
+									{item.description}
+								</p>
+							</article>
+						))
+					}
+				</div>
+
+				<div
+					class="mt-12 grid gap-6 rounded-3xl border border-slate-200/70 bg-white p-8 shadow-sm lg:grid-cols-[1.2fr_0.8fr] lg:p-10"
+				>
+					<div>
+						<h2
+							class="text-2xl font-semibold text-black md:text-4xl"
+						>
+							No vendemos modulos sueltos. Construimos una
+							experiencia conectada para la veterinaria moderna.
+						</h2>
+						<p
+							class="mt-5 text-base leading-8 text-wofy-black md:text-lg"
+						>
+							Por eso Wofy conecta procesos que suelen vivir
+							separados: la
+							<a
+								class="font-semibold text-puerto-rico-700 hover:text-puerto-rico-800"
+								href="/agenda"
+							>
+								agenda veterinaria
+							</a>, el
+							<a
+								class="font-semibold text-puerto-rico-700 hover:text-puerto-rico-800"
+								href="/historial-clinico"
+							>
+								historial clinico
+							</a>
+							y el
+							<a
+								class="font-semibold text-puerto-rico-700 hover:text-puerto-rico-800"
+								href="/marketing"
+							>
+								marketing por WhatsApp
+							</a>. Cuando esas piezas trabajan juntas, la clinica
+							gana claridad y el cliente siente una mejor
+							atencion.
+						</p>
+					</div>
+
+					<div class="rounded-3xl bg-puerto-rico-100/50 p-6">
+						<h3 class="text-xl font-semibold text-black">
+							Lo que buscamos resolver
+						</h3>
+						<ul
+							class="mt-4 space-y-4 text-sm leading-7 text-wofy-black md:text-base"
+						>
+							<li>Desorden entre chats, llamadas y agenda.</li>
+							<li>
+								Seguimientos que dependen de memoria humana.
+							</li>
+							<li>
+								Historias clinicas dispersas o dificiles de
+								consultar.
+							</li>
+							<li>
+								Clientes que se enfrien por falta de contacto
+								oportuno.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<FAQSection
+			title="Preguntas frecuentes sobre Wofy"
+			description="Una pagina de nosotros tambien debe responder dudas reales. Estas son algunas de las preguntas mas comunes sobre por que Wofy y como encaja en una veterinaria."
+			items={faqs}
+		/>
+
+		<FeatureCTA
+			header="Creamos Wofy para que tu te concentres en lo que importa."
+		/>
+	</main>
+</Layout>

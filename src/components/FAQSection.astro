@@ -1,0 +1,58 @@
+---
+type FaqItem = {
+	question: string;
+	answer: string;
+};
+
+interface Props {
+	title: string;
+	description: string;
+	items: FaqItem[];
+	className?: string;
+}
+
+const { title, description, items, className = 'px-4 py-16 sm:px-6 lg:px-8' } = Astro.props;
+---
+
+<section class={className}>
+	<div class="mx-auto max-w-5xl">
+		<div class="text-center">
+			<div class="inline-flex rounded-full border border-[#ff1fa9]/15 bg-[#ff1fa9]/8 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-[#ff1fa9]">
+				FAQ
+			</div>
+			<h2 class="mt-6 text-3xl font-semibold text-black md:text-5xl">
+				{title}
+			</h2>
+			<p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-wofy-black md:text-lg">
+				{description}
+			</p>
+		</div>
+
+		<div class="mt-10 p-1 md:p-2">
+			{
+				items.map((item, index) => (
+					<details
+						class={`group rounded-3xl border border-slate-200/80 bg-white px-5 py-1 shadow-sm transition duration-300 open:border-[#ff1fa9]/25 md:px-6 ${
+							index === 0 ? '' : 'mt-3'
+						}`}
+						open={index === 0}
+					>
+						<summary class="flex cursor-pointer list-none items-center justify-between gap-4 py-5">
+							<h3 class="pr-4 text-left text-lg font-semibold text-black md:text-xl">
+								{item.question}
+							</h3>
+							<span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#ff1fa9]/15 bg-[#ff1fa9]/10 text-xl font-medium leading-none text-[#ff1fa9] transition duration-300 group-open:rotate-45 group-open:bg-[#ff1fa9] group-open:text-white">
+								+
+							</span>
+						</summary>
+						<div class="overflow-hidden pb-5 pr-14">
+							<p class="text-sm leading-7 text-wofy-black md:text-base">
+								{item.answer}
+							</p>
+						</div>
+					</details>
+				))
+			}
+		</div>
+	</div>
+</section>

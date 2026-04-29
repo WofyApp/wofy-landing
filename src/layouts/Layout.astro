@@ -8,18 +8,23 @@ interface Props {
 	title: string;
 	description?: string;
 	ogType?: 'website' | 'article';
+	structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
 const {
 	title,
 	description = 'Wofy, Software para Veterinarias, Gestiona citas, historias clínicas por mascota, recordatorios por WhatsApp, vacunas, clientes y certificados por correo.',
 	ogType = 'website',
+	structuredData,
 } = Astro.props;
 
 const canonical = Astro.site
 	? new URL(Astro.url.pathname, Astro.site).toString()
 	: Astro.url.toString();
 const robotsContent = 'index, follow';
+const structuredDataJson = structuredData
+	? JSON.stringify(structuredData)
+	: null;
 ---
 
 <!doctype html>
@@ -42,6 +47,9 @@ const robotsContent = 'index, follow';
 		<meta name="twitter:card" content="summary" />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
+		{structuredDataJson && (
+			<script type="application/ld+json" set:html={structuredDataJson} />
+		)}
 
 		<title>{title}</title>
 	</head>
